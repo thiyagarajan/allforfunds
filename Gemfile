@@ -50,3 +50,4 @@ gem 'simple_form', '~> 3.0.0.rc'
 gem 'mandrill-api'
 gem 'unicorn'
 gem 'sprockets-rails'
+gem 'pg', group: :production
