@@ -1,0 +1,12 @@
+[
+    {
+        "name":"Test Item 1",
+        "url":"http://google.com",
+        "brand":"Gucci"
+    },
+    {
+        "name":"Test Item 2",
+        "url":"http://google.com",
+        "brand":"Gucci"
+    }
+]

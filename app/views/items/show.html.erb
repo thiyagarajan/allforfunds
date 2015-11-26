@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://demo.tanimdesign.net/template/tshop-v1.2/html/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+    <title>TSHOP - Bootstrap E-Commerce Parallax Theme</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- add theme styles for this template -->
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="/assets/css/skin-1.css">
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- styles needed by smoothproducts.js for product zoom  -->
+    <link rel="stylesheet" href="/assets/css/smoothproducts.css">
+    <!-- styles needed by carousel slider -->
+    <link href="/assets/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="/assets/js/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="/assets/js/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <!-- styles needed by minimalect -->
+    <link href="/assets/css/jquery.minimalect.min.css" rel="stylesheet">
+    <!-- styles needed by checkRadio -->
+    <link href="/assets/css/ion.checkRadio.css" rel="stylesheet">
+    <link href="/assets/css/ion.checkRadio.cloudy.css" rel="stylesheet">
+    <!-- styles needed by mCustomScrollbar -->
+    <link href="/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <script type="text/javascript">
+$(document).ready(function() {
+    $('dropdown-toggle').dropdown()
+});
+</script>
+    <!-- Just for debugging purposes. -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- include pace script for automatic web page progress bar  -->
+    <style type="text/css">
+      #remove.remove-from-cart-<%= @item.id %>  {
+        background:#fff;
+        color: gray;
+        border:solid 2px #757577;
+
+      }
+      #remove.remove-from-cart-<%= @item.id %>  button:hover {
+        background:#fff;
+        color: black;
+        border:solid 2px #757577;
+
+      }
+      .thumbnail > img, .thumbnail a > img {
+margin-right: auto;
+margin-left: auto;
+max-height: 90px;
+}
+    </style>
+    <script>
+      paceOptions = {
+        elements: true
+      };
+    </script>
+    
+
+    <script src="/assets/js/pace.min.js"></script>
+    <script type="text/javascript">
+      function swapStyleSheet(sheet){
+      document.getElementById('pagestyle').setAttribute('href', sheet);
+      }
+    </script>   
+    <script>
+
+      removefromwishlist = function (id) {
+          $.ajax({url: "/wishlist/remove",
+          dataType: "json",
+          data: "item_id=" + id,
+          type: "post",
+          success: function(result) {
+            $(".add-to-wishlist").show();
+            $(".remove-from-wishlist").hide();
+          }});
+
+      }
+
+      addtowishlist = function(id) {
+          $.ajax({url: "/wishlist/add",
+          dataType: "json",
+          data: "item_id=" + id,
+          type: "post",
+          success: function(result) {
+            $(".add-to-wishlist").hide();
+            $(".remove-from-wishlist").show();
+          }});
+
+      }
+
+      addtocart = function(id) {
+        $.ajax({url: "/cart/add",
+          dataType: "json",
+          data: "item_id=" + id,
+          type: "post",
+          success: function(result) {
+            $(".add-to-cart-"+id).hide();
+            $(".remove-from-cart-"+id).show();
+          }});
+      }
+
+      removefromcart = function(id) {
+        $.ajax({url: "/cart/remove",
+          dataType: "json",
+          data: "item_id=" + id,
+          type: "post",
+          success: function(result) {
+            $(".add-to-cart-"+id).show();
+            $(".remove-from-cart-"+id).hide();
+          }});
+      }
+
+    </script>
+
+  </head>
+  <body>
+    <!-- Fixed navbar start -->
+    <%= render 'layouts/signup' %>
+    <%= render 'layouts/login' %>
+    <%= render 'layouts/nav' %>
+    <!-- /.Fixed navbar  -->
+    <div class="container main-container headerOffset">
+      
+      <div class="row transitionfx">
+        <!-- left column -->
+        <!-- product Image and Zoom -->
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#dedede">
+            <tbody>
+              <tr>
+                <td align="center" valign="top">
+                  <p>
+                    <script type="text/javascript">
+                      var preload = new Array();
+                      
+                      swapInit = function()
+                      {
+                          var first = document.getElementById('thumbnails').getElementsByTagName('a')[0];
+                          swap(first);
+                      
+                      //     preloadImage("http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch1.jpg?r=2498&width=500&height=399");
+                      // preloadImage("http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch2.jpg?r=2498&width=500&height=399");
+                      // preloadImage("http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch3.jpg?r=2498&width=500&height=399");
+                      // preloadImage("http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch4.jpg?r=2498&width=500&height=399");
+                      // preloadImage("http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch5.jpg?r=2498&width=500&height=399");
+                      // preloadImage("http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch5.jpg?r=2498&width=500&height=399");
+                          
+                      }
+                      
+                      preloadImage = function(src)
+                      {
+
+                          if (document.images) {
+                              var index = preload.length;
+                              preload[index] = new Image();
+                              preload[index].src = src;
+                          }
+                      }
+                      
+                      swap = function(that)
+                      {
+                          var url = that.href;
+                          var hspace = vspace = 0;
+                          var fullsize = document.getElementById('fullsize');
+                      
+                          // get width and height
+                          var query = url.split('?')[1];
+                          var parameters = query.split('&');
+                          for (i = 0; i < parameters.length; i++) {
+                              var parameter = parameters[i].split('=');
+                              var key = parameter[0];
+                              var value = parameter[1];
+                      
+                              if ('width' == key) {
+                                  var width = value;
+                              } else if ('height' == key) {
+                                  var height = value;
+                              }
+                          }
+                      
+                          // calculate padding
+                          if (height < 500) {
+                              //vspace = Math.floor((500 - height) / 2);
+                          } else if (width < 500) {
+                              hspace = Math.floor((500 - width) / 2);
+                          }
+                      
+                          // swap in new image
+                          fullsize.src = url;
+                          fullsize.width = width;
+                          fullsize.height = height;
+                          fullsize.hspace = hspace;
+                          fullsize.vspace = vspace;
+                      
+                          return false;
+                      }
+                    </script>
+
+                  </p>
+                  <div class="swapper">
+                    <div class="fullsize" style="width:100%">
+                      <img id="fullsize" src="<%= @item.photos[0].url %>" width="100%"  hspace="0" vspace="0">
+                    </div>
+                    <script type="text/javascript">
+                      swapInit();
+                    </script>
+                  </div>
+                  <p></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="thumbnails" id="thumbnails">
+          <% @item.photos.each do |photo| %>
+            <div class="thumbnail"><a href="<%= photo.url %>" onClick="swap(this); return false;" ><img src="<%= photo.url %>" border="0" style="padding: 18px 8px;"></a></div>
+          <% end %>
+<!--             <div class="thumbnail"><a href="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch1.jpg?r=2498&amp;width=500&amp;height=399" onmouseover="swap(this);" onclick="return false;"><img src="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fthumbs_itouch1.jpg?r=2498" border="0" style="padding: 18px 8px;"></a></div>
+            <div class="thumbnail"><a href="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch2.jpg?r=2498&amp;width=500&amp;height=399" onmouseover="swap(this);" onclick="return false;"><img src="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fthumbs_itouch2.jpg?r=2498" border="0" style="padding: 18px 8px;"></a></div>
+            <div class="thumbnail"><a href="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch3.jpg?r=2498&amp;width=500&amp;height=399" onmouseover="swap(this);" onclick="return false;"><img src="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fthumbs_itouch3.jpg?r=2498" border="0" style="padding: 18px 8px;"></a></div>
+            <div class="thumbnail"><a href="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch4.jpg?r=2498&amp;width=500&amp;height=399" onmouseover="swap(this);" onclick="return false;"><img src="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fthumbs_itouch4.jpg?r=2498" border="0" style="padding: 18px 8px;"></a></div>
+            <div class="thumbnail"><a href="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch5.jpg?r=2498&amp;width=500&amp;height=399" onmouseover="swap(this);" onclick="return false;"><img src="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fthumbs_itouch5.jpg?r=2498" border="0" style="padding: 18px 8px;"></a></div>
+            <div class="thumbnail"><a href="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch5.jpg?r=2498&amp;width=500&amp;height=399" onmouseover="swap(this);" onclick="return false;"><img src="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fthumbs_itouch5.jpg?r=2498" border="0" style="padding: 18px 8px;"></a></div>
+            <div class="thumbnail"><a href="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch5.jpg?r=2498&amp;width=500&amp;height=399" onmouseover="swap(this);" onclick="return false;"><img src="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fthumbs_itouch5.jpg?r=2498" border="0" style="padding: 18px 8px;"></a></div>
+            <div class="thumbnail"><a href="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fitouch5.jpg?r=2498&amp;width=500&amp;height=399" onmouseover="swap(this);" onclick="return false;"><img src="http://auctionsound.s3.amazonaws.com/clients%2Fdefault%2Fphoto_sets%2F196%2Fthumbs_itouch5.jpg?r=2498" border="0" style="padding: 18px 8px;"></a></div> -->
+          </div>
+        </div>
+        <!--/ left column end --> 
+        <!-- right column -->
+        <div class="col-lg-6 col-md-6 col-sm-5">
+          <h1 class="product-title"> <%= @item.title %> </h1>
+          <div class="product-price"> <span class="price"> <%= number_to_currency(@item.price) %></span> </div>
+          
+          <div class="productThumb"> </div>
+          <!--/.productThumb-->
+          <div class="cart-actions">
+            <div class="addto">
+              <% in_cart = false %>
+              <% if @cart != nil then %>
+                <% if @cart.items.include? item then %>
+                  <% in_cart = true %>
+                <% end %>
+              <% end %>
+              <% if current_user != nil then %>
+              <button onclick="addtocart(<%= @item.id %>);" class="button btn-cart cart first add-to-cart-<%= @item.id %>" <% if in_cart then %> style="display: none;" <% end %> title="Add to Cart" type="button">Add To Cart</button>
+              <button id="remove" onclick="removefromcart(<%= @item.id %>);" class="button btn-cart cart first remove-from-cart-<%= @item.id %>" <% if !in_cart then %> style="display: none;" <% end %> title="Remove From Cart" type="button">Remove From Cart</button>
+              <a onclick="removefromwishlist(<%= @item.id %>)" class="link-wishlist wishlist remove-from-wishlist" <% if !@is_in_wishlist then %> style="display: none;" <% end %> > Remove From Wishlist </a>
+              <a onclick="addtowishlist(<%= @item.id %>)" class="link-wishlist wishlist add-to-wishlist" <% if @is_in_wishlist then %> style="display: none;" <% end %>>Add to Wishlist</a> 
+              <% else %>
+              <button data-toggle="modal" data-target="#ModalLogin" class="button btn-cart cart first" title="Login In To Add To Cart" type="button">Login To Add To Cart</button>
+              <% end %>
+
+            </div>
+            <div style="clear:both"></div>
+            <h3 class="incaps"><i class="fa fa fa-check-circle-o color-in"></i> In stock</h3>
+            <h3 style="display:none" class="incaps"><i class="fa fa-minus-circle color-out"></i> Out of stock</h3>
+            <h3 class="incaps"> <i class="glyphicon glyphicon-lock"></i> Secure online ordering</h3>
+          </div>
+          <!--/.cart-actions-->
+          <div class="clear"></div>
+          <div class="product-tab w100 clearfix">
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane active" id="description">
+                <h4> Description </h4>
+                <% @item.aspects.each do |aspect| %>
+                <p> <%= aspect.name %>: <%= aspect.value %> </p>
+                
+                <% end %>
+                <h4> Shipping </h4>
+                <table >
+                  <colgroup>
+                    <col style="width:33%">
+                    <col style="width:33%">
+                    <col style="width:33%">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>Standard Domestic</td>
+                      <td>1-5 business days</td>
+                      <td>Free</td>
+                    </tr>
+                    <tr>
+                      <td>International</td>
+                      <td>5-15 business days</td>
+                      <td>$35</td>
+                    </tr>
+                    
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+             
+            </div>
+            <!-- /.tab content --> 
+          </div>
+          <!--/.product-tab-->
+          <div style="clear:both"></div>
+          <div class="product-share clearfix">
+            <p> SHARE </p>
+            <div class="socialIcon"> <a target="_blank" href="https://www.facebook.com/pages/AllForFundscom/205378972832597"> <i  class="fa fa-facebook"></i></a> <a target="_blank" href="http://twitter.com/allforfunds">  <i  class="fa fa-twitter"></i></a> <a target="_blank" href="https://plus.google.com/114559517260205523346"> <i  class="fa fa-google-plus"></i></a> <a target="_blank" href="http://pinterest.com/allforfunds"> <i  class="fa fa-pinterest"></i></a> <a  target="_blank" href="http://instagram.com/allforfunds"> <i  class="fa fa-instagram"></i></a> </div>
+          </div>
+          <!--/.product-share--> 
+        </div>
+        <!--/ right column end --> 
+      </div>
+      <!--/.row-->
+    
+      <!--/.recommended-->
+      <div style="clear:both"></div>
+    </div>
+    <!-- /main-container -->
+    <div class="gap"></div>
+<%= render 'layouts/footer' %> 
+  </body>
+</html>

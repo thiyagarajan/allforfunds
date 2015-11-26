@@ -1,0 +1,76 @@
+		
+			<div class="container">
+				<div class="row">
+					<br>
+					<h3 class="boxes-title-1"><span>Contact us with any questions</span></h3>
+					<form action="/contact" method="post" accept-charset="utf-8">
+                    <div class="" style="padding: 5px;">
+                          <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                    <input class="form-control" name="firstname" placeholder="First Name" type="text" required autofocus />
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                    <input class="form-control" name="lastname" placeholder="Last Name" type="text" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                                    <input class="form-control" name="email" placeholder="E-mail" type="text" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                                    <input class="form-control" name="subject" placeholder="Subject" type="text" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="panel-footer" style="margin-bottom:-14px;">
+                            <input type="submit" class="btn btn-success" value="Send"/>
+                                <!--<span class="glyphicon glyphicon-ok"></span>-->
+                            <input type="reset" class="btn btn-danger" value="Clear" />
+                                <!--<span class="glyphicon glyphicon-remove"></span>-->
+                            
+                        </div>
+                    </div>
+                    <br>
+                <br>
+                </div>
+                </div>
+				</div>
+			</div>
+			</div>
+			</div>
+		
+        <script>
+            $(function(){
+            $('a[title]').tooltip();
+            
+            $('.btn-submit').on('click', function(e) {
+            
+                var formname = $(this).attr('name'); 
+                var tabname = $(this).attr('href');
+                
+                if ($('#' + formname)[0].checkValidity()) { /* Only works in Firefox/Chrome need polyfill for IE9, Safari. http://afarkas.github.io/webshim/demos/ */
+                    e.preventDefault();
+                    $('ul.nav li a[href="' + tabname + '"]').parent().removeClass('disabled');
+                    $('ul.nav li a[href="' + tabname + '"]').trigger('click');
+                }
+            
+            });
+            
+            $('ul.nav li').on('click', function(e) {
+                if ($(this).hasClass('disabled')) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            });
+            
+            
+            
+        </script>

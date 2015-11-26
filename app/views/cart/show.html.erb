@@ -1,0 +1,7 @@
+<% if @cart == nil then %>
+	<h2>There are no items in your cart. Go Shopping!</h2>
+<% else %>
+	<% @cart.items.each do |item| %>
+		<h2> <%= item.title %> </h2>
+	<% end %>
+<% end %>

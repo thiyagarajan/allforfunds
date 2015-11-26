@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="http://demo.tanimdesign.net/template/tshop-v1.2/html/ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="assets/ico/favicon.png">
+		<title>TSHOP - Bootstrap E-Commerce Parallax Theme </title>
+		<!-- Bootstrap core CSS -->
+		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<!-- add theme styles for this template -->
+		<link id="pagestyle" rel="stylesheet" type="text/css" href="assets/css/skin-1.css">
+		<!-- Custom styles for this template -->
+		<link href="assets/css/style.css" rel="stylesheet">
+		<!-- css3 animation effect for this template -->
+		<link href="assets/css/animate.min.css" rel="stylesheet">
+		<!-- styles needed by mCustomScrollbar -->
+		<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+		<link href="assets/css/howto.css" rel="stylesheet">
+		<!-- Just for debugging purposes. -->
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->  
+		<!-- include pace script for automatic web page progress bar  -->
+		<script>
+			paceOptions = {
+			  elements: true
+			};
+		</script>
+		<script src="assets/js/pace.min.js"></script>
+		
+	</head>
+	<body>
+		<!-- Modal Signup For Consignment start -->
+		<div class="modal signUpContent fade" id="ModalSignupConsignment" tabindex="-1" role="dialog" >
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
+						<h3 class="modal-title-site text-center" > START SELLING </h3>
+					</div>
+					<div class="modal-body">
+							<form action="/sell/sign_up" method="POST">
+							<legend>Sign Up</legend>
+							<h4>It's free, simple, and fast to get started.</h4>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<input type="text" name="firstname" value="" class="form-control input-lg" placeholder="First Name"  />                        
+								</div>
+								<div class="col-xs-6 col-md-6">
+									<input type="text" name="lastname" value="" class="form-control input-lg" placeholder="Last Name"  />                        
+								</div>
+							</div>
+							<input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  />
+                            <input type="text" name="phone" value="" class="form-control input-lg" placeholder="Your Phone Number"  />
+                            <input type="text" name="address" value="" class="form-control input-lg" placeholder="Address"  />  
+							<div class="row">
+								<div class="col-xs-4 col-md-4">
+									<input type="text" name="city" value="" class="form-control input-lg" placeholder="City"  />                        
+								</div>
+								<div class="col-xs-4 col-md-4">
+									<input type="text" name="state" value="" class="form-control input-lg" placeholder="State"  />                        
+								</div>
+								<div class="col-xs-4 col-md-4">
+									<input type="text" name="zip" value="" class="form-control input-lg" placeholder="Zip"  />                        
+								</div>
+							</div>
+							<label>Gender : </label>                    <label class="radio-inline">
+							<input type="radio" name="gender" value="M" id=male />                        Male
+							</label>
+							<label class="radio-inline">
+							<input type="radio" name="gender" value="F" id=female />                        Female
+							</label>
+							<br />
+							<span class="help-block">By clicking Create my account, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.</span>
+							<button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+							Create my account</button>
+						</form>
+						<!--userForm--> 
+					</div>
+				</div>
+				<!-- /.modal-content --> 
+			</div>
+			<!-- /.modal-dialog --> 
+		</div>
+		<%= render 'layouts/login' %>
+		<%= render 'layouts/signup' %>
+		<%= render 'layouts/nav' %>
+		<!-- /.Fixed navbar  -->
+		<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+		<div class="">
+			<section class="picture-section">
+				<div class="container">
+					<div class="row">
+						<br>
+						<br>
+						<br>
+						<br>
+						<div class="col-md-4 col-md-offset-1 vcenter">
+							<div class="promo-box" >
+								<center>
+									<h4>SELLING MADE</h4>
+									<h1>SIMPLE</h1>
+									<br>
+									<h3 ><span>- All For Funds Full Service - </span></h3>
+									<p>
+										Send us your new or gently loved designer accessories or apparel - we'll do the rest!
+									</p>
+									<br>
+									<a class="btn btn-stroke-light" data-toggle="modal" data-target="#ModalSignupConsignment"> GET STARTED</a>
+								</center>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		</div>
+		</section>
+		<section style="background:#F5F5F5;">
+			<div class="container messy">
+				<div class="row">
+					<br>
+					<h3 class="boxes-title-1"><span>It's Simple, We Take Care of the Details.</span></h3>
+					<div class="container">
+						<div class="row">
+							<br>
+							<div class="col-md-3">
+								<center>
+									<img src="https://images.tradesy.com/images/global/hiw_icon_1.png" class="img-circle" alt="the-brains">
+									<br>
+									<h4>Payment.</h4>
+									<p>You are paid via check or cash when your item sells. It couldn't be simpler.<br>
+								</center>
+							</div>
+							<div class="col-md-3">
+								<center>
+									<img src="https://images.tradesy.com/images/global/hiw_icon_2.png" class="img-circle" alt="...">
+									<br>
+									<h4 class="footertext">Shipping.</h4>
+									<p class="footertext">Ship us your items - when they sell, we'll mail them to the buyer at no cost to you.<br>
+								</center>
+							</div>
+							<div class="col-md-3">
+								<center>
+									<img src="https://images.tradesy.com/images/global/hiw_icon_3.png" class="img-circle" alt="...">
+									<br>
+									<h4 class="footertext">Returns.</h4>
+									<p class="footertext">All For Funds handles all returns directly, so buyers are protected, and sellers have fewer headaches.<br>
+								</center>
+							</div>
+							<div class="col-md-3">
+								<center>
+									<img src="https://images.tradesy.com/images/global/hiw_icon_4.png" class="img-circle" alt="...">
+									<br>
+									<h4 class="footertext">PayPal.</h4>
+									<p class="footertext">All payments on All For Funds are secured with 128bit encryption via PayPal.<br>
+								</center>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+   
+		<section style="background:#fff;">
+			<div class="container">
+				<div class="row">
+					<br>
+					<h3 class="boxes-title-1"><span>How It Works</span></h3>
+					<div class="board">
+						<div class="board-inner">
+							<ul class="nav nav-tabs" id="myTab">
+								<div class="liner"></div>
+								<li class="active">
+									<a href="#1" data-toggle="tab" title="Get Started">
+									<span class="round-tabs one">
+									<i class="glyphicon glyphicon-home"></i>
+									</span> 
+									</a>
+								</li>
+                                <li><a href="#2" data-toggle="tab" title="What we &#9829;">
+									<span class="round-tabs four">
+									<i class="glyphicon glyphicon-heart"></i>
+									</span> 
+									</a>
+								</li>
+								<li><a href="#3" data-toggle="tab" title="Process">
+									<span class="round-tabs two">
+									<i class="glyphicon glyphicon-user"></i>
+									</span> 
+									</a>
+								</li>
+								<li><a href="#4" data-toggle="tab" title="Listing">
+									<span class="round-tabs three">
+									<i class="glyphicon glyphicon-gift"></i>
+									</span> </a>
+								</li>
+								<li><a href="#5" data-toggle="tab" title="Shop">
+									<span class="round-tabs four">
+									<i class="glyphicon glyphicon-shopping-cart"></i>
+									</span> 
+									</a>
+								</li>
+                                
+								<li><a href="#6" data-toggle="tab" title="FAQs">
+									<span class="round-tabs two">
+									<i class="glyphicon glyphicon-comment"></i>
+									</span> </a>
+								</li>
+                                
+                                <li><a href="#7" data-toggle="tab" title="Testimonials">
+									<span class="round-tabs three">
+									<i class="glyphicon glyphicon-bullhorn"></i>
+									</span> </a>
+								</li>
+                                <li><a href="#8" data-toggle="tab" title="Done">
+									<span class="round-tabs five">
+									<i class="glyphicon glyphicon-ok"></i>
+									</span> </a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="1" style="padding-top:14%">
+								<h3 class="head text-center">Send Us Your New and Gently Used Items At No Cost </h3>
+								<p class="narrow text-center">
+									It's free and easy to request a  shipping kit. We'll send you everything you need to sell your items with us. Send us items our community will love. Some quidelines are listed below.
+								</p>
+								<form class="form-horizontal text-center" id="home_form" name="home_form" role="form">
+									<fieldset>
+										<button type="submit" href="#2" name="home_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>
+									</fieldset>
+								</form>
+							</div>
+                            <div class="tab-pane fade in" id="2">
+								<h3 class="head text-center">Send Us Your New and Gently Used Items At No Cost </h3>
+								<div class="love">
+				<div class="row">
+                    
+					<div class="col-sm-offset-2 col-sm-4">
+						<h4 class="text-center">WE LOVE</h4>
+						<ul class="list-unstyled love">
+							<li>Women's clothing, shoes, bags, jewelry, and accessories</li>
+							<li>Recent styles from top designers</li>
+							<li>Items that are clean and freshly laundered</li>
+							<li>Items that are new or in excellent condition</li>
+							<li>Authentic items</li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<h4 class="text-center">WE DON’T LOVE</h4>
+						<ul class="list-unstyled no-love">
+							<li>Items with stains, tears, odors, or any damage</li>
+							<li>Men's or children's clothing</li>
+							<li>Undergarments, cosmetics, or non-fashion items</li>
+							<li>Fast fashion chains or discount labels</li>
+							<li>Replica or unauthentic items</li>
+                            <li>Women’s trousers</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+								<form class="form-horizontal text-center" id="home_form" name="home_form" role="form">
+									<fieldset>
+										<button type="submit" href="#3" name="home_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>
+									</fieldset>
+								</form>
+							</div>
+							<div class="tab-pane fade" id="3" style="padding-top:14%">
+								<h3 class="head text-center">We process your Items</h3>
+								<p class="narrow text-center">
+									Our fashion resale professionals review your clothing and we pay up to 70% of the resale value.  Your approved items will be cataloged and we'll let know what we're going to accept.
+								</p>
+								<form class="form-horizontal text-center" id="profile_form" name="profile_form" role="form">
+									<fieldset>
+										<button type="submit" href="#4" name="profile_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>
+									</fieldset>
+								</form>
+							</div>
+							<div class="tab-pane fade" id="4" style="padding-top:14%">
+								<h3 class="head text-center">We list your Items</h3>
+								<p class="narrow text-center">
+									Your approved items will be checked for any abnormalities and professionally listed by our team of top designers. Your listings will be carefully crafted and sent to you for approval.
+								</p>
+								<form class="form-horizontal text-center" id="messages_form" name="messages_form" role="form">
+									<fieldset>
+										<button type="submit" href="#5" name="messages_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>
+									</fieldset>
+								</form>
+							</div>
+							<div class="tab-pane fade" id="5" style="padding-top:13%">
+								<h3 class="head text-center">People shop and you earn top dollar</h3>
+								<p class="narrow text-center">
+									Your listings are pushed to various different eCommerce sites including our own high traffic eBay store, our website, and several other eCommerce platforms - all to maximize your exposure and selling potential. Your listings will be highly visible thanks to our strategic partnerships. When your listing sells, you're paid top dollar and sent a payout via your prefered method. This includes check, wire, or cash (local only).
+								</p>
+								<form class="form-horizontal text-center" id="settings_form" name="settings_form" role="form">
+									<fieldset>
+										<button type="submit" href="#6" name="settings_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>
+									</fieldset>
+								</form>
+							</div>
+                            <div class="tab-pane fade" id="6">
+								
+								<h3 class="head text-center">Frequently  Asked Questions</h3>
+				<div class="sellstuff">
+				<div class="row">
+                    
+					<div class="col-sm-offset-1 col-sm-5">
+						<h4 class="text-center">SELL</h4>
+						
+                            <ul class="list-unstyled sellstuff">
+							<li>It’s easy to earn money from your closet. Simply choose the items you want to sell or swap. Take a few photos of theese items and list the item for sale or swap.</li>
+							
+						</ul>
+                          
+					
+					</div>
+					<div class="col-sm-5">
+						<h4 class="text-center">SELL FAQ</h4>
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h5 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          What kinds of items can I sell with All for Funds?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+       You can sell any designer luxury brands that fit the criteria listed above. Generally, any brand-name, highend, fashion goods are generally accepted. Please contact us at Info@AllForFunds.com and we will let you know if you have what we are looking for.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h5 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          How do I get my items to All for Funds?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+       If you are located in or near Denver, Colorado, we will come and pick your items up.  If you located elsewhere, you may ship your items to us. We will send you a prepaid shipping package that contains everything you need to get started. 
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h5 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          What do I need to do as an All For Funds Client?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+       All for Funds does all the work for you.  Once we have your items, we take care of the photographing, listing, selling, and shipping process.
+      </div>
+    </div>
+  </div>
+                            
+        <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h5 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+          Are there any costs to list my items?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+       There are no upfront costs.
+      </div>
+    </div>
+  </div>
+                            
+                            
+                            
+     <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h5 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          How much money will I make?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body">
+       For items sold for under $1000, the client receives 60% of the sales price, minus a very small eBay and PayPal fee.  For items sold for over $1000, the client receives 70% of the sales price, minus a very small eBay and PayPal fee.  For more details, see our terms and conditions page. 
+      </div>
+    </div>
+  </div>
+                            
+                            
+                            
+                            <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingSix">
+      <h5 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          As a client, is my information protected?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+      <div class="panel-body">
+     Yes.  At All for Funds, client confidentiality is taken very seriously.  Your information is safe and protected.  For more details, see our privacy page.
+      </div>
+    </div>
+  </div>
+</div>
+					</div>
+				</div>
+			</div>
+								<form class="form-horizontal text-center" id="settings_form" name="settings_form" role="form">
+									<fieldset>
+										<button type="submit" href="#7" name="settings_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>
+									</fieldset>
+								</form>
+							</div>
+							<div class="tab-pane fade" id="7">
+								<div class="text-center">
+									<i class="img-intro icon-checkmark-circle"></i>
+								</div>
+								<h3 class="head text-center">Testimonials</h3>
+								<div class="carousel-reviews broun-block">
+    <div class="container">
+        <div class="row">
+            <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
+            
+                <div class="carousel-inner">
+                    <div class="item active">
+                	    <div class="col-md-3 col-sm-6">
+        				    <div class="block-text rel zmin">
+						     
+							   
+						        <p>Super fast shipping, exactly as pictured! Perfect!</p>
+                               
+								<i>eBay Buyer</i>
+							    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
+					        </div>
+							
+						</div>
+            			<div class="col-md-3 col-sm-6 hiddem-sm hidden-xm ">
+        				    <div class="block-text rel zmin ">
+						       
+							   
+						        <p>My experience with “All For Funds” has repeatedly been exceptional. Buying, selling, trading or letting go of those items in my closet that I've never used that others would love to have. My mother left rural South Carolina to pursue her dreams to be a fashion model in Manhattan, NY, in the 1940’s. It was a very difficult time in our history and everyone was sacrificing.  She eventually was recognized by the “Ford Modeling Agency” and became an international fashion model and started her own design company in So Ho, with one goal in mind. Create a brand, value and make quality designer fashion available for everyone.  “All For Funds” symbolizes this dream and dedication and offers a service that benefits everyone. The process, customer service, staff and professionalism is impeccable and they do all the work for you. Simply said it’s just brilliant and so are the people.  I highly recommend this company to my family and friends with complete trust and confidence to handle all my high end designer fashion transactions and so should you. </p>
+                                
+								<i>Michael </i>
+							    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
+					        </div>
+							
+						</div>
+						<div class="col-md-3 col-sm-6">
+        				    <div class="block-text rel zmin  hiddem-sm hidden-xm">
+						       
+							   
+						        <p>Excellent communication, and super fast shipping! I highly recommend.</p>
+                                
+								<i>eBay Buyer</i>
+							    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
+					        </div>
+							
+						</div>
+                    </div>
+                    
+                                     
+                </div>
+               
+            </div>
+        </div>
+    </div>
+        </div>
+								<form class="form-horizontal text-center" id="settings_form" name="settings_form" role="form">
+									<fieldset>
+										<button type="submit" href="#8" name="settings_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></button>
+									</fieldset>
+								</form>
+							</div>
+                            <div class="tab-pane fade" id="8" style="padding-top:14%">
+								<div class="text-center">
+									<i class="img-intro icon-checkmark-circle"></i>
+								</div>
+								<h3 class="head text-center">Repeat!</h3>
+								<p class="narrow text-center">
+									Say goodbye to crowded closets and credit card bills. You've just turned your closet into a goldmine. 
+								</p>
+								<form class="form-horizontal text-center" id="settings_form" name="settings_form" role="form">
+									<fieldset>
+										<a class="btn-submit btn btn-success btn-outline-rounded green" data-toggle="modal" data-target="#ModalSignupConsignment"> Get Started Now</a>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			</div>
+		</section>
+		
+
+
+
+		<%= render 'layouts/footer' %>
+		<script>
+		$(function(){
+    $('a[title]').tooltip();
+
+    $('.btn-submit').on('click', function(e) {
+
+        var formname = $(this).attr('name'); 
+        var tabname = $(this).attr('href');
+        
+        if ($('#' + formname)[0].checkValidity()) { /* Only works in Firefox/Chrome need polyfill for IE9, Safari. http://afarkas.github.io/webshim/demos/ */
+            e.preventDefault();
+            $('ul.nav li a[href="' + tabname + '"]').parent().removeClass('disabled');
+            $('ul.nav li a[href="' + tabname + '"]').trigger('click');
+        }
+
+    });
+
+    $('ul.nav li').on('click', function(e) {
+        if ($(this).hasClass('disabled')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+});
+
+</script>
+	</body>
+</html>

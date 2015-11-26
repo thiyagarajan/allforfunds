@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://demo.tanimdesign.net/template/tshop-v1.2/html/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="/assets/ico/favicon.png">
+<title>TSHOP - Bootstrap E-Commerce Parallax Theme</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+<!-- add theme styles for this template -->
+<link id="pagestyle" rel="stylesheet" type="text/css" href="/assets/css/skin-1.css">
+
+<!-- Custom styles for this template -->
+<link href="/assets/css/style.css" rel="stylesheet">
+
+<!-- styles needed by minimalect -->
+<link href="/assets/css/jquery.minimalect.min.css" rel="stylesheet">
+<!-- styles needed by checkRadio -->
+<link href="/assets/css/ion.checkRadio.css" rel="stylesheet">
+<link href="/assets/css/ion.checkRadio.cloudy.css" rel="stylesheet">
+<!-- styles needed by mCustomScrollbar -->
+<link href="/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+
+
+<!-- Just for debugging purposes. -->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->  
+
+<!-- include pace script for automatic web page progress bar  -->
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+  Stripe.setPublishableKey('<%= ENV["STRIPE_PK"] %>');
+
+  payByCard = function(){
+    var $form = $("#stripe-pay");
+    $("#submitCard").prop('disabled', true);
+
+    Stripe.card.createToken({number: $('#CardNumber').val(),
+      cvc: $('#VerificationCode').val(),
+      exp_month: $('#expirationMonth').val(),
+      exp_year: $('#expirationYear').val(),
+      name: $('#CardNumber2').val()}, 
+      function(status, response){
+        var $form = $("#stripe-pay");
+
+        if(response.error) {
+          $("#card-error").show();
+          $("#card-error-message").text( response.error.message);
+          $("#card-error-message").show();
+        } else {
+          var token = response.id;
+          $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+          $form.get(0).submit();
+        }
+      });
+  }
+
+</script>
+
+ <script>
+    paceOptions = {
+      elements: true
+    };
+</script>
+
+<script src="/assets/js/pace.min.js"></script>
+     
+    </head>
+
+<body>
+  <br>
+  <br>
+  <br><div class="container main-container headerOffset">
+  <div class="row">
+    <div class="breadcrumbDiv col-lg-12">
+      <ul class="breadcrumb">
+        <li> <a href="index.html">Home</a> </li>
+        <li> <a href="cart.html">Cart</a> </li>
+        <li class="active"> Checkout </li>
+      </ul>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-7">
+      <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> Checkout</span></h1>
+    </div>
+    
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-12">
+      <div class="row userInfo">
+        <div class="col-xs-12 col-sm-12">
+          <div class="w100 clearfix">
+            <ul class="orderStep ">
+<%= render partial: "menu" %>
+            </ul>
+            <!--orderStep--> 
+          </div>
+          <div class="w100 clearfix">
+            <div class="row userInfo">
+              <div class="col-lg-12">
+                <h2 class="block-title-2"> Payment method </h2>
+                <p>Please select the preferred shipping method to use on this order.</p>
+                <hr>
+              </div>
+              <div class="col-xs-12 col-sm-12">
+                <div class="paymentBox">
+                  <div class="panel-group paymentMethod" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading panel-heading-custom">
+                        <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="/checkout/payment#collapseOne"> <span class="numberCircuil">Option 1</span><strong> PayPal</strong> </a> </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                          <p>All transactions are secure and encrypted, and we neverstor To learn more, please view our privacy policy.</p>
+                          <br>
+                          <label class="radio-inline" for="radios-3">
+                            <input name="radios" id="radios-3" value="4" type="radio">
+                            <img src="//cdn2.allforfunds.com/images/pages/footer/payment/paypal.png" height="18" alt="paypal"> Checkout with Paypal </label>
+                          <div class="form-group">
+                            <label for="CommentsOrder2">Add Comments About Your Order</label>
+                            <textarea id="CommentsOrder2" class="form-control" name="CommentsOrder2" cols="26" rows="3"></textarea>
+                          </div>
+                          <div class="form-group clearfix">
+                            <label class="checkbox-inline" for="checkboxes-0">
+                              <input name="checkboxes" id="checkboxes-0" value="1" type="checkbox">
+                              I have read and agree to the <a href="terms-conditions.html">Terms & Conditions</a> </label>
+                          </div>
+                          <div class="pull-right"> <%= form_tag '/confirm' do %> <input type="hidden" value="Paypal" name="method" /><a onclick="$(this).parent().submit();" class="btn btn-primary btn-small " > Confirm Order &nbsp; <i class="fa fa-arrow-circle-right"></i> <% end %></a> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading panel-heading-custom">
+                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" data-parent="#accordion" href="/checkout/payment#collapseTwo"> <span class="numberCircuil">Option 2</span> <strong> Credit Card</strong> </a> </h4>
+                      </div>
+                      <%= form_tag '/confirm', :id => "stripe-pay" do%>
+                      <div id="collapseTwo" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                          <h4 id="card-error" style="color:red" <% if @error == nil then %> hidden <% end %>> There was a problem with your card. Please verify your information then try again. </h4>
+                          <h4 id="card-error-message" style="color:red" <% if @error == nil then %> hidden <% end %>> <%= @error %></h4>
+                          <br>
+                          
+                          <input type="hidden" name="method" value="Stripe">
+                          <p>All transactions are secure and encrypted, and we never store payment information. To learn more, please view our privacy policy.</p>
+                          <br>
+                          <div class="panel open">
+                            <div class="creditCard">
+                              <div class="cartBottomInnerRight paymentCard"> 
+                              </div>
+                              
+                                <div class="paymentInput">
+                                  <label for="CardNumber">Credit Card Number *</label>
+                                  <br>
+                                  <input id="CardNumber" type="text" name="Number" <% if @user.card_number != nil then %> value="<%= @user.card_number %>" <% end %>>
+                                </div>
+                                <!--paymentInput-->
+                                <div class="paymentInput">
+                                  <label for="CardNumber2">Name on Credit Card *</label>
+                                  <br>
+                                  <input type="text" name="CardName" id="CardNumber2" <% if @user.card_name != nil then %> value="<%= @user.card_name %>" <% end %>>
+                                </div>
+                                <!--paymentInput-->
+                                <div class="paymentInput">
+                                  <div class="form-group">
+                                    <label>Expiration date *</label>
+                                    <br>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 no-margin-left no-padding">
+                                      <select required aria-required="true" id= "expirationMonth" name="expire">
+                                        <option value="">Month</option>
+                                        <option value="1">01 - January</option>
+                                        <option value="2">02 - February</option>
+                                        <option value="3">03 - March</option>
+                                        <option value="4">04 - April</option>
+                                        <option value="5">05 - May</option>
+                                        <option value="6">06 - June</option>
+                                        <option value="7">07 - July</option>
+                                        <option value="8">08 - August</option>
+                                        <option value="9">09 - September</option>
+                                        <option value="10">10 - October</option>
+                                        <option value="11">11 - November</option>
+                                        <option value="12">12 - December</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                      <select required aria-required="true" id="expirationYear" name="year">
+                                        <option value="">Year</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--paymentInput-->
+                                
+                                <div style="clear:both"></div>
+                                <div class="paymentInput clearfix">
+                                  <label for="VerificationCode">Verification Code *</label>
+                                  <br>
+                                  <input type="text" id="VerificationCode" name="VerificationCode" style="width:90px;">
+                                  <br>
+                                </div>
+                              <!--paymentInput-->
+                                
+                                <div>
+                                  <input checked type="checkbox" name="saveInfo" id="saveInfoid">
+                                  <label for="saveInfoid">&nbsp;Save my Card information</label>
+                                </div>
+                              </div>
+                            <!--creditCard-->
+                            
+                            <div class="pull-right"> <a id="#submitCard" onclick="payByCard();" class="btn btn-primary btn-small " > Confirm Order &nbsp; <i class="fa fa-arrow-circle-right"></i> </a> </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+                
+                <!--/row--> 
+                
+              </div>
+            </div>
+          </div>
+          <!--/row end-->
+          
+          
+        
+        <!--/ cartFooter --> 
+        
+      </div>
+
+    </div>
+    <!--/row end-->
+    
+
+    <!--/rightSidebar--> 
+    
+  </div>
+  <!--/row-->
+  <%= render partial: "cost" %>
+  <div style="clear:both"></div>
+
+</div>
+<!-- /.main-container -->
+<div class="gap"> </div>
+
+
+<!-- Le javascript
+================================================== --> 
+
+<!-- Placed at the end of the document so the pages load faster --> 
+<script type="text/javascript" src="/assets/js/jquery/1.8.3/jquery.js"></script> 
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script> 
+
+<!-- include  parallax plugin --> 
+<script type="text/javascript"  src="/assets/js/jquery.parallax-1.1.js"></script> 
+
+<!-- optionally include helper plugins --> 
+<script type="text/javascript"  src="/assets/js/helper-plugins/jquery.mousewheel.min.js"></script> 
+
+<!-- include mCustomScrollbar plugin //Custom Scrollbar  --> 
+
+<script type="text/javascript" src="/assets/js/jquery.mCustomScrollbar.js"></script> 
+
+<!-- include checkRadio plugin //Custom check & Radio  --> 
+<script type="text/javascript" src="/assets/js/ion-checkRadio/ion.checkRadio.min.js"></script> 
+
+<!-- include grid.js // for equal Div height  --> 
+<script src="/assets/js/grids.js"></script> 
+
+<!-- include carousel slider plugin  --> 
+<script src="/assets/js/owl.carousel.min.js"></script> 
+
+<!-- jQuery minimalect // custom select   --> 
+<script src="/assets/js/jquery.minimalect.min.js"> </script> 
+
+<!-- include touchspin.js // touch friendly input spinner component   --> 
+<script src="/assets/js/bootstrap.touchspin.js"></script> 
+
+<!-- include custom script for site  --> 
+<script src="/assets/js/script.js"></script>
+
+<script type="text/javascript">
+  $(".submit-credit-card").click(function(){
+    $("#credit-form").submit();
+  });
+</script>
+
+<style>
+.submit-button {
+  margin-top: 10px;
+}
+</style>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<% if @results["error"] == nil then %>
+Success!
+<% else %>
+<h2><%= @results["error"] %></h2>
+<% end %>
+
+<% if @items != nil then %>
+	<% @items.each do |item| %>
+		<h2> <%= item.title %> </h2>
+		<% item.photos.each do |photo| %>
+		 	<% if photo.is_gallery == 1 then %>
+<!-- 		 		<%= form_tag "/cart/add" do%>
+		 			<input name="item_id" value= <%= item.id %> type="hidden">
+		 			<input type="image" src= <%= photo.url %> alt="Submit">
+		 		<% end %> -->
+		 		<%= link_to item.title, item %>
+		 		<% break %>
+		 	<% end %>
+		<% end %>
+		<% item.aspects.each do |aspect| %>
+			<p> <%= aspect.name %>: <%= aspect.value %> </p>
+		<% end %>
+	<% end %>
+<% end %>

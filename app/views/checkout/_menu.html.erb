@@ -1,0 +1,6 @@
+<ul class="orderStep ">
+  <li <% if @active == 1 then %> class="active" <% end %>> <a href="/checkout"> <i class="fa fa-map-marker "></i> <span> address</span> </a> </li>
+  <li <% if @active == 2 then %> class="active" <% end %>> <a href="/checkout/billing"> <i class="fa fa fa-envelope  "></i> <span> Billing </span></a></li>
+  <li <% if @active == 3 then %> class="active" <% end %>> <a href="/checkout/payment"><i class="fa fa-money  "> </i><span>Payment</span> </a> </li>
+  <li <% if @active == 4 then %> class="active" <% end %>> <a> <i class="fa fa-check-square "> </i><span>Order</span></a></li>
+</ul>

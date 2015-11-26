@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="http://demo.tanimdesign.net/template/tshop-v1.2/html/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+<title>TSHOP - Bootstrap E-Commerce Parallax Theme </title>
+<!-- Bootstrap core CSS -->
+<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+<!-- add theme styles for this template -->
+<link id="pagestyle" rel="stylesheet" type="text/css" href="assets/css/skin-1.css">
+
+<!-- Custom styles for this template -->
+<link href="assets/css/style.css" rel="stylesheet">
+
+<!-- css3 animation effect for this template -->
+<link href="assets/css/animate.min.css" rel="stylesheet">
+
+<!-- styles needed by mCustomScrollbar -->
+<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+
+
+<!-- Just for debugging purposes. -->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->  
+
+<!-- include pace script for automatic web page progress bar  -->
+
+
+ <script>
+    paceOptions = {
+      elements: true
+    };
+</script>
+
+<script src="assets/js/pace.min.js"></script>
+      
+    </head>
+
+<body>
+  
+    
+<!-- Modal Login start -->
+<div <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="http://demo.tanimdesign.net/template/tshop-v1.2/html/ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="assets/ico/favicon.png">
+		<title>TSHOP - Bootstrap E-Commerce Parallax Theme </title>
+		<!-- Bootstrap core CSS -->
+		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<!-- add theme styles for this template -->
+		<link id="pagestyle" rel="stylesheet" type="text/css" href="assets/css/skin-1.css">
+		<!-- Custom styles for this template -->
+		<link href="assets/css/style.css" rel="stylesheet">
+		<!-- css3 animation effect for this template -->
+		<link href="assets/css/animate.min.css" rel="stylesheet">
+		<!-- styles needed by mCustomScrollbar -->
+		<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+		<link href="assets/css/howto.css" rel="stylesheet">
+		<!-- Just for debugging purposes. -->
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->  
+		<!-- include pace script for automatic web page progress bar  -->
+		<script>
+			paceOptions = {
+			  elements: true
+			};
+		</script>
+		<script src="assets/js/pace.min.js"></script>
+		
+	<body>
+		<!-- Modal Login start -->
+		<%= render 'layouts/login' %>
+		
+		<!-- /.Modal Login --> 
+		<!-- Modal Signup start -->
+		<%= render 'layouts/signup' %>
+			<!-- /.modal-dialog --> 
+	
+		
+		<!-- Fixed navbar start -->
+	<%= render 'layouts/nav' %>
+		<!-- /.Fixed navbar  -->
+
+    
+	
+<div class="parallax-section parallax-fx parallax-image-aboutus parallaxOffset no-padding">
+  <div class="w100 ">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="parallax-content clearfix animated ">
+            <h1 class="x2large">
+              THE ONLINE DESIGNER CONSIGNMENT EXPERTS
+            </h1>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.parallax -->
+
+<div class="container main-container ">
+  
+  <div class="row innerPage">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="row userInfo">
+        <div class="col-xs-12 col-sm-12">
+          <h1 class="title-big text-center section-title-style2">
+            <span >
+              All For Funds
+            </span>
+          </h1>          
+          <p class="lead text-center">
+           Founded in 2011 by Lisa Butterly, AllforFunds is the foremost online haven to purchase and sell new and pre-loved designer goods.  With high profile, highly coveted selling channels, an App in the iTunes store, AllforFunds has a world wide market of buyers and is a Gold Power Seller on eBay.com.
+          </p>
+          <h1 class="title-big text-center section-title-style2">
+            <span >
+              Our Mission
+            </span>
+          </h1>
+          <p class="lead text-center">
+          All for Funds is changing the face of consignment, one luxury good at a time! All for Funds strives to provide superior customer service and a smooth shopping experience. Selling with All for Funds is simple and effective. All for Funds is your online sales team, and is committed to helping you profit from your new and pre-loved luxury goods.
+
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-12">
+	        <div class="col-xs-6 col-sm-6">
+	          <h3 class="title-med text-center">	            
+	             Sell with AllforFunds.com	            
+	          </h3>
+	          <p class="lead1 text-center">
+		          -Complimentary House Calls in the Denver Area <br/><br/>
+		          -Free USPS Shipping of your approved items<br/><br/>
+		          -First Class Client Services<br/><br/>
+		          -Exculusive Client Inventory Management Log-In System<br/><br/>
+		          -Maximum Exposure on multiple online selling platforms<br/><br/>
+		          -Highly secure storage with video cameras technology for your items  <br/><br/>
+	          </p>
+	        </div> 
+	        <div class="col-xs-6 col-sm-6">
+	           	<h3 class="title-med text-center">		            
+		            Shop with AllforFunds.com
+		        </h3>
+          		<p class="lead1 text-center">
+	         		-Search by your favorite brand name designer,size,color,and style	<br/><br/>
+	         		-Always free shipping	<br/><br/>
+	         	    -Many items New with Tags<br/><br/>
+	         	    -Shop top brand name designers at friendly prices	<br/><br/>
+	         	    -Item wrapped with a bow	<br/><br/>
+	         	    -Fast shipping,six days a week	<br/><br/>
+	         	    -Simple Shopping,Simple Returns	<br/><br/>
+	                -Why Pay Full Retail?<br/><br/> 
+	          	</p>
+	        </div>
+          	<hr />
+        </div>
+        <div class="col-xs-12 col-sm-12">
+  		
+	        <div class="col-xs-5 col-sm-5 col-md-5">
+	           		<img class="img-responsive" src="/images/pages/index/slider/model.jpg" alt="img" > 
+	        		<p class="lead text-center"  style="margin-top: 5px;">
+	        			Founder: Lisa Butterly
+	        		</p>
+	        </div>
+	        <div class="col-xs-2 col-sm-2 col-md-2" >	      	
+	      
+        	</div>
+            
+        	<div class="col-xs-5 col-sm-5 col-md-5" >
+        		<img class="img-responsive" src="/images/pages/index/slider/about_page2.jpg" alt="img" >
+	        </div>
+	   
+        </div>
+      </div>  <!--/row end-->
+    </div>
+  </div> <!--/.innerPage-->
+  <div style="clear:both">  </div>
+</div><!-- /.main-container -->
+<div class="gap"> </div>
+
+
+
+<%= render 'layouts/footer' %>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,48 @@
+<div class="modal signUpContent fade"id="ModalSignup" tabindex="-1" role="dialog" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
+        <h3 class="modal-title-site text-center" > REGISTER </h3>
+      </div>
+      <div class="modal-body">
+        
+        <%= form_tag '/users', :class => "new_user", id: "new_user" do |f| %>
+<!--         <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="X9jXWnJmhBougRQs3TPUDr5HXqpvXxtQu7FKXYixq9k="> --></div>
+        <div class="form-group reg-email">
+          
+          <div>
+            <input  autofocus="autofocus" id="user_email" name="user[email]" type="email" value="" class="form-control input"  size="20" placeholder="Enter Email">
+          </div>
+        </div>
+        <div class="form-group reg-password">
+          <div >
+            <input autocomplete="off" id="user_password" name="user[password]" type="password" class="form-control input"  size="20" placeholder="Password (8 Character Minumum)">
+          </div>
+        </div>
+
+        <div class="form-group reg-password">
+          <div >
+            <input  autocomplete="off" id="user_password_confirmation" name="user[password_confirmation]" type="password" class="form-control input"  size="20" placeholder="Confirm Password">
+          </div>
+        </div>
+        
+        <div >
+          <div >
+            <input name="submit" class="btn  btn-block btn-lg btn-primary" value="REGISTER" type="submit">
+          </div>
+        </div>
+      <% end %>
+        <!--userForm--> 
+        
+      </div>
+      <div class="modal-footer">
+        <p class="text-center"> Already member? <a data-toggle="modal"  data-dismiss="modal" href="product-details.html#ModalLogin"> Sign in </a> </p>
+      </div>
+    </div>
+    <!-- /.modal-content --> 
+    
+  </div>
+  <!-- /.modal-dialog --> 
+  
+</div>
