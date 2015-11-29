@@ -126,6 +126,10 @@ a:hover, a:focus {
   .navbar-tshop {
     background: #efefef;
   }
+
+  .sub-menu li{
+    padding: 10px;
+  }
 }
 
 @media (min-width: 980px) {
