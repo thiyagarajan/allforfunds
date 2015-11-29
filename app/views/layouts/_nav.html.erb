@@ -1,653 +1,713 @@
-<div class="navbar navbar-tshop megamenu" role="navigation">
-    <div class="navbar-middle">
-  <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
-        
-        <div class="pull-left">
-            <ul class="userMenu ">
-                <li> <a href=""> 
-                    <span> <i class="glyphicon glyphicon-envelope hidden-xs"></i></span> 
-                    <span class="hidden-xs">All Orders Ship FREE with All For Funds |</span> </a> </li>
-                
-              <li> <a href="/contact"> 
-                  <span> <i class="glyphicon glyphicon-bullhorn hidden-xs"></i></span> 
-                  <span class="">HELP</span> |</a> </li>
-              <li class="phone-number"> 
-              <a href="callto:7207084907"> 
-              <span> <i class="glyphicon glyphicon-phone-alt hidden-xs"></i></span> 
-              <span class="" style="margin-left:5px"> 720 708 4907 </span> </a> </li>
+<header>
+  <div class="navbar navbar-tshop megamenu" role="navigation">
+
+    <div class="w100 brandWrap navbar-middle">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span> <span class="icon-bar"> </span>
+          </button>
+
+          <%= link_to (image_tag 'pages/header/logo.png', class: 'img-responsive'), '/', class: 'navbar-brand' %>
+        </div>
+
+        <div id="navbar">
+          <div class="nav navbar-nav navbar-right">
+            <div class="row text-right sell_shop">
+              <%= link_to 'Sell with us', '/sell', class: 'label label-default sell' %>
+              <%= link_to 'Shop with us', '/sell', class: 'label label-default shop' %>
+            </div>
+
+
+            <ul class="pull-right sub-menu">
+              <li>
+                <form class="navbar-form header-search" role="search" method="GET" action="/shop">
+                  <div class="input-group">
+                    <div id="multiple-datasets">
+                      <input class="typeahead unstyled" type="text" placeholder="Search" name="search" id="search">
+                    </div>
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li>
+                <% if current_user != nil then %>
+                    <%= link_to '<i class="fa fa-shopping-cart"> </i> Shopping Cart'.html_safe, '/cart', class: '' %>&nbsp;&nbsp;
+                <% end %>
+                <% if current_user == nil then %>
+                    <a href="#" data-toggle="modal" data-target="#ModalLogin" class="dropdown-toggle">
+                      <i class='fa fa-shopping-cart'></i> Shopping Cart </i>
+                      <span class="cartRespons"></span> </a>&nbsp;&nbsp;
+                <% end %>
+              </li>
+              <li><%= link_to '<i class="fa fa-heart"> </i> My Wishlist'.html_safe, '#', class: '' %>&nbsp;&nbsp;</li>
+              <li><%= link_to 'Sign in', '#', 'data-toggle' => 'modal', 'data-target' => '#ModalLogin' %>
+                Or <%= link_to 'Create an account', '#', 'data-toggle' => 'modal', 'data-target' => '#ModalSignup' %>
+              </li>
             </ul>
           </div>
         </div>
-        <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 no-margin no-padding">
-          <div class="pull-right">
-            <ul class="userMenu">
-              <% if current_user != nil then %>  <li> <a a href="/account">Logged In As <%= current_user.email %> | </a> </li> 
-              <li> <a a href="/wishlist">My Wishlist | </a> </li> 
-              <li> <a href="/account"><span> My Account <% if current_user == nil then %> | <% end %></span> </a> </li><% end %>
-              <% if current_user == nil then %>
-              <li> <a href="#" data-toggle="modal" data-target="#ModalLogin"> <span >Login |</span>  </a> </li>
-              <li class="hidden-xs"> <a href="#" data-toggle="modal" data-target="#ModalSignup"> Create Account </a> </li>
-              <% end %>
-                
-            </ul>
-              
+
+        <div class="nav navbar-nav navbar-right hidden-xs">
+
+          <div class="search-box hidden-lg hidden-md hidden-sm">
+            <div class="input-group">
+              <button class="btn btn-nobg getFullSearch" type="button"><i class="fa fa-search"> </i></button>
+            </div>
+            <!-- /input-group -->
+
           </div>
+          <!--/.search-box -->
+        </div>
+        <!--/.navbar-nav hidden-xs-->
+
+      </div>
+    </div>
+    <!-- /w100 -->
+
+    <div class="w100 menuWrap boarder-menu" style="border-bottom: none;">
+      <div class="container">
+
+
+        <!-- this part is duplicate from cartMenu  keep it for mobile -->
+
+
+        <div class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav ">
+
+            <li class="dropdown megamenu-40width">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"> CLOTHING <b class="caret"> </b> </a>
+              <ul class="dropdown-menu">
+                <li class="megamenu-content">
+
+                  <!-- megamenu-content -->
+
+                  <h3 class="promo-1 no-margin hidden-xs"> Clothing</h3><br>
+
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
+
+
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Tops & Blouses">
+                        <a href="#" onclick="this.parentNode.submit();">Tops</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Dresses">
+                        <a href="#" onclick="this.parentNode.submit();">Dresses</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Sweaters">
+                        <a href="#" onclick="this.parentNode.submit();">Sweaters</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Coats & Jackets">
+                        <a href="#" onclick="this.parentNode.submit();">Coats & Jackets</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="jeans">
+
+                        <a href="#" onclick="this.parentNode.submit();">Designer Denim</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Pants">
+                        <a href="#" onclick="this.parentNode.submit();">Pants</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Athletic Apparel">
+                        <a href="#" onclick="this.parentNode.submit();">Athletic Apparel</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Suits & Blazers">
+                        <a href="#" onclick="this.parentNode.submit();">Suits &amp; Blazers </a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing">
+                        <a href="#" onclick="this.parentNode.submit();">View All</a>
+                      </form>
+                    </li>
+
+                  </ul>
+
+
+                  <ul class="col-lg-6 col-sm-6 col-md-3 col-xs-6 hidden-md hidden-sm hidden-xs">
+                    <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs">
+
+
+                      <img class="img-responsive hidden-sm hidden-xs" src="/images/pages/header/navigation/clothing.jpg" alt="img">
+
+
+                    </li>
+
+                  </ul>
+                  <div class="col-lg-12">
+
+
+                    <form method="post" action="/shop">
+                      <div class="input-group custom-search-form">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women's Clothing">
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Search Clothing" style="margin-top: 20px;">
+              <span class="input-group-btn">
+              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+             </span>
+                      </div>
+                      <!-- /input-group -->
+                  </div>
+                  </form>
+
+
+                </li>
+
+              </ul>
+            </li>
+            <li class="dropdown megamenu-40width">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"> HANDBAGS <b class="caret"> </b> </a>
+              <ul class="dropdown-menu">
+                <li class="megamenu-content">
+
+                  <!-- megamenu-content -->
+
+                  <h3 class="promo-1 no-margin hidden-xs"> Handbags </h3>
+                  <br>
+
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
+
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
+                        <input type="hidden" name="search" value="shoulder">
+
+                        <a href="#" onclick="this.parentNode.submit();">Shoulder</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
+                        <input type="hidden" name="search" value="tote">
+
+                        <a href="#" onclick="this.parentNode.submit();">Tote</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
+                        <input type="hidden" name="search" value="cross body">
+
+                        <a href="#" onclick="this.parentNode.submit();">Cross Body</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
+                        <input type="hidden" name="search" value="clutch">
+
+                        <a href="#" onclick="this.parentNode.submit();">Clutch </a>
+                      </form>
+                    </li>
+
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
+                        <input type="hidden" name="search" value="evening">
+
+                        <a href="#" onclick="this.parentNode.submit();">Evening</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
+                        <a href="#" onclick="this.parentNode.submit();">View All</a>
+                      </form>
+                    </li>
+
+
+                  </ul>
+
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
+                    <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs">
+
+
+                      <img class="img-responsive hidden-md hidden-sm hidden-xs" src="/images/pages/header/navigation/handbags.jpg" alt="img">
+
+
+                    </li>
+
+                  </ul>
+
+                  <div class="col-lg-12">
+                    <form method="post" action="/shop">
+                      <div class="input-group custom-search-form">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women's Handbags & Bags">
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Search Handbags" style="margin-top: 20px;">
+              <span class="input-group-btn">
+              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+             </span>
+                      </div>
+                      <!-- /input-group -->
+                  </div>
+                  </form>
+
+                </li>
+
+              </ul>
+            </li>
+            <li class="dropdown megamenu-40width">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"> SHOES <b class="caret"> </b> </a>
+              <ul class="dropdown-menu">
+                <li class="megamenu-content">
+
+                  <!-- megamenu-content -->
+
+                  <h3 class="promo-1 no-margin hidden-xs"> Shoes </h3>
+                  <br>
+
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
+
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes:Heels">
+                        <a href="#" onclick="this.parentNode.submit();">Heels</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes:Boots">
+                        <a href="#" onclick="this.parentNode.submit();">Boots</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes:Flats">
+                        <a href="#" onclick="this.parentNode.submit();">Flats</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes:Sandals">
+                        <a href="#" onclick="this.parentNode.submit();">Sandals</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes">
+                        <a href="#" onclick="this.parentNode.submit();">View All</a>
+                      </form>
+                    </li>
+
+                  </ul>
+
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
+                    <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs">
+
+
+                      <img class="img-responsive hidden-md hidden-sm hidden-xs" src="/images/pages/header/navigation/shoes.jpg" alt="img">
+
+
+                    </li>
+
+                  </ul>
+
+                  <div class="col-lg-12">
+                    <form method="post" action="/shop">
+                      <div class="input-group custom-search-form">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women's Shoes">
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Search Shoes" style="margin-top: 20px;">
+              <span class="input-group-btn">
+              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+             </span>
+                      </div>
+                      <!-- /input-group -->
+                  </div>
+                  </form>
+
+                </li>
+
+              </ul>
+            </li>
+            <li class="dropdown megamenu-40width">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"> JEWELRY <b class="caret"> </b> </a>
+              <ul class="dropdown-menu">
+                <li class="megamenu-content">
+
+                  <!-- megamenu-content -->
+
+                  <h3 class="promo-1 no-margin hidden-xs"> Jewelry</h3>
+                  <br>
+
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
+
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Necklace">
+
+                        <a href="#" onclick="this.parentNode.submit();">Necklaces</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Bracelet">
+
+                        <a href="#" onclick="this.parentNode.submit();">Bracelets</a>
+                      </form>
+                    </li>
+
+
+                  </ul>
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
+                    <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs">
+
+
+                      <img class="img-responsive hidden-sm hidden-md hidden-xs" src="/images/pages/header/navigation/jewelry.jpg" alt="img">
+
+
+                    </li>
+
+                  </ul>
+
+                  <div class="col-lg-12">
+                    <form method="post" action="/shop">
+                      <div class="input-group custom-search-form">
+
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Search Jewelry" style="margin-top: 20px;">
+              <span class="input-group-btn">
+              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+             </span>
+                      </div>
+                      <!-- /input-group -->
+                  </div>
+                  </form>
+
+                </li>
+
+              </ul>
+            </li>
+            <li class="dropdown megamenu-40width">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"> ACCESSORIES <b class="caret"> </b> </a>
+              <ul class="dropdown-menu">
+                <li class="megamenu-content">
+
+                  <!-- megamenu-content -->
+
+                  <h3 class="promo-1 no-margin hidden-xs"> Accessories</h3>
+                  <br>
+
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
+                    <li class="no-border">
+                      <p><strong> Accessories </strong></p>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories:Scarves & Wraps">
+                        <a href="#" onclick="this.parentNode.submit();">Scarves</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories:Sunglasses">
+                        <a href="#" onclick="this.parentNode.submit();">Sunglasses</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories:Wallets">
+                        <a href="#" onclick="this.parentNode.submit();">Wallets</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories">
+                        <a href="#" onclick="this.parentNode.submit();">View All</a>
+                      </form>
+                    </li>
+
+                  </ul>
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
+                    <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs">
+
+
+                      <img class="img-responsive hidden-sm hidden-md hidden-xs" src="/images/pages/header/navigation/accessories.jpg" alt="img">
+
+
+                    </li>
+
+                  </ul>
+
+                  <div class="col-lg-12">
+                    <form method="post" action="/shop">
+                      <div class="input-group custom-search-form">
+                        <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women's Accessories">
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Search Accessories" style="margin-top: 20px;">
+              <span class="input-group-btn">
+              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+             </span>
+                      </div>
+                      <!-- /input-group -->
+                  </div>
+                  </form>
+
+                </li>
+
+              </ul>
+            </li>
+            <li class="dropdown megamenu-40width">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"> BY DESIGNER <b class="caret"> </b> </a>
+              <ul class="dropdown-menu">
+                <li class="megamenu-content">
+
+                  <!-- megamenu-content -->
+
+                  <h3 class="promo-1 no-margin hidden-xs"> Designers</h3>
+                  <br>
+
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
+                    <li class="no-border">
+                      <p><strong> Designers</strong></p>
+                    </li>
+
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Louis Vuitton">
+
+                        <a href="#" onclick="this.parentNode.submit();">Louis Vuitton</a>
+                      </form>
+                    </li>
+
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Chanel">
+
+                        <a href="#" onclick="this.parentNode.submit();">Chanel</a>
+                      </form>
+                    </li>
+
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Prada">
+
+                        <a href="#" onclick="this.parentNode.submit();">Prada</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Gucci">
+
+                        <a href="#" onclick="this.parentNode.submit();">Gucci</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Lululemon">
+
+                        <a href="#" onclick="this.parentNode.submit();">Lululemon</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Hermes">
+
+                        <a href="#" onclick="this.parentNode.submit();">Hermes</a>
+                      </form>
+                    </li>
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Jimmy Choo">
+
+                        <a href="#" onclick="this.parentNode.submit();">Jimmy Choo</a>
+                      </form>
+                    </li>
+
+                    <li>
+                      <form method="post" action="/shop">
+
+                        <input type="hidden" name="search" value="Burberry">
+
+                        <a href="#" onclick="this.parentNode.submit();">Burberry</a>
+                      </form>
+                    </li>
+
+                  </ul>
+
+                  <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
+                    <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs">
+
+
+                      <img class="img-responsive hidden-sm hidden-md hidden-xs" src="/images/pages/header/navigation/top-designers.jpg" alt="img">
+
+
+                    </li>
+
+                  </ul>
+
+                  <div class="col-lg-12">
+                    <div class="input-group custom-search-form">
+                      <input type="text" class="form-control" placeholder="Search Designers" style="margin-top: 20px;">
+              <span class="input-group-btn">
+              <button class="btn btn-default hidden-md" type="button" style="margin-top: 20px;">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+             </span>
+                    </div>
+                    <!-- /input-group -->
+                  </div>
+
+                </li>
+
+              </ul>
+            </li>
+            <li><a href="http://allforfunds.com/sell" style="color: #d4af37;">Sell</a></li>
+
+
+          </ul>
+          <div class="cartMenu hidden-md hidden-sm hidden-xs">
+            <% if current_user != nil then %><a href="/cart" class="dropdown-toggle">
+            <% end %>
+            <% if current_user == nil then %>
+                <a href="#" data-toggle="modal" data-target="#ModalLogin" class="dropdown-toggle">
+            <% end %><i class="fa fa-shopping-cart" style="padding-top: 5px; padding-left: 8px;"> </i>
+            <span class="cartRespons"></span> </a>
+
+            <!--/.dropdown-menu-->
+          </div>
+
+          <div class="col-sm-3 col-md-3 pull-right">
+            <form class="navbar-form hidden-md hidden-xs hidden-sm" role="search" method="GET" action="/shop">
+              <div class="input-group">
+                <div id="multiple-datasets">
+                  <input class="typeahead unstyled" type="text" placeholder="Search products and designers" name="search" id="search">
+                </div>
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+              </div>
+            </form>
+            <form method="GET" action="/shop">
+              <div class="input-group custom-search-form hidden-lg">
+                <input type="text" class="form-control" name="search" id="search" placeholder="Search products and designers">
+              <span class="input-group-btn">
+              <button class="btn btn-default hidden-md" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+             </span>
+              </div>
+              <!-- /input-group -->
+            </form>
+          </div>
+          <!--- navbar social icon || this part will be hidden on mobile version -->
+          <div class="nav navbar-nav pull-right">
+
+
+          </div>
+          <!--/.navbar-right || social icon end-->
+
+        </div>
+        <!--/.nav-collapse -->
+
+      </div>
+      <!--/.container -->
+
+
+      <!--/.search-full ||  search form here-->
+
+    </div>
+    <!--/.w100-full-->
+
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="couponModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Subscription Form Demo</h4>
+
+          <p>This is Bootstrap Modal popup example.</p>
+        </div>
+        <div class="modal-body">
+
+          <!--End mc_embed_signup-->
+
+          <!-- Begin MailChimp Signup Form -->
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+
+              <div class="col-sm-10">
+                <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL"/>
+              </div>
+            </div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;">
+              <input type="text" name="b_9e279011b21a23e1aed5e4868_cca4394bc9" value=""/></div>
+            <div class="form-group remove-bottom">
+              <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default"/>
+              </div>
+            </div>
+          </form>
+
+          <!--End mc_embed_signup-->
+        </div>
+        <div class="modal-footer remove-top">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
-        </div>
-  <!--/.navbar-top-->
-
-  <div class="w100 brandWrap navbar-middle">
-    <div class="container">
-    
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button>
-
-     <a href="/cart"> <button type="button" class="navbar-toggle" > <i class="fa fa-shopping-cart "> </i> <span class="cartRespons "> View Cart </span> </button></a>
-      <div class="nav-center">
-          <a class="navbar-brand " href="/"> <img src="/images/pages/header/logo.png">
-                                                            </a>
-        </div>
-        
-      
-     
-        
-      <!-- this part for mobile -->
-      
-    </div>
-    
-    <div class="nav navbar-nav navbar-right hidden-xs">
-      
-       
-        
-        
-        
-
-        
-        <div class="search-box hidden-lg hidden-md hidden-sm">
-          <div class="input-group">
-            <button class="btn btn-nobg getFullSearch" type="button"> <i class="fa fa-search"> </i></button>
-          </div>
-          <!-- /input-group --> 
-          
-        </div><!--/.search-box -->
-      </div><!--/.navbar-nav hidden-xs-->
-    
-    </div>
-  </div> <!-- /w100 --> 
-  
-  <div class="w100 menuWrap boarder-menu" style="border-bottom: none;">
-  <div class="container">
-    
-    
-    <!-- this part is duplicate from cartMenu  keep it for mobile -->
-   
-
-    <div class="navbar-collapse collapse">
-        
-      <ul class="nav navbar-nav ">
-          
-   <li class="dropdown megamenu-40width"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">  CLOTHING <b class="caret"> </b> </a>
-          <ul class="dropdown-menu">
-            <li class="megamenu-content"> 
-              
-              <!-- megamenu-content -->
-              
-              <h3 class="promo-1 no-margin hidden-xs"> Clothing</h3><br>
-              
-              
-              <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
-               
-                  
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Tops & Blouses">
-                  <a href="#" onclick="this.parentNode.submit();">Tops</a>
-                </form> </li>
-                <li> 
-                  <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Dresses">
-                  <a href="#" onclick="this.parentNode.submit();">Dresses</a>
-                </form>
-                  </li>
-                 <li><form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Sweaters">
-                  <a href="#" onclick="this.parentNode.submit();">Sweaters</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Coats & Jackets">
-                  <a href="#" onclick="this.parentNode.submit();">Coats & Jackets</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="jeans">
-
-                  <a href="#" onclick="this.parentNode.submit();">Designer Denim</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Pants">
-                  <a href="#" onclick="this.parentNode.submit();">Pants</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Athletic Apparel">
-                <a href="#" onclick="this.parentNode.submit();">Athletic Apparel</a>
-                </form> </li>
-                  <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing:Suits & Blazers">
-                  <a href="#" onclick="this.parentNode.submit();">Suits &amp; Blazers </a>
-                </form> </li>
-                  <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing">
-                  <a href="#" onclick="this.parentNode.submit();">View All</a>
-                </form> </li>
-                  
-              </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="col-lg-6 col-sm-6 col-md-3 col-xs-6 hidden-md hidden-sm hidden-xs">
-                <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs"> 
-                
-                     
-                    <img class="img-responsive hidden-sm hidden-xs" src="/images/pages/header/navigation/clothing.jpg" alt="img"> 
-                   
-                    
-                   
-                 </li>
-                    
-              </ul>
-               <div class="col-lg-12">
-                
-                
-<form method="post" action="/shop">
-            <div class="input-group custom-search-form">
-              <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women's Clothing">
-              <input type="text" id="search" name="search"class="form-control" placeholder="Search Clothing" style="margin-top: 20px;">
-              <span class="input-group-btn">
-              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
-              <span class="glyphicon glyphicon-search"></span>
-             </button>
-             </span>
-             </div><!-- /input-group -->
-        </div>
-</form>
-
-
-            </li>
-              
-          </ul>
-        </li>
-          <li class="dropdown megamenu-40width"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> HANDBAGS <b class="caret"> </b> </a>
-          <ul class="dropdown-menu">
-            <li class="megamenu-content"> 
-              
-              <!-- megamenu-content -->
-              
-              <h3 class="promo-1 no-margin hidden-xs"> Handbags </h3>
-             <br>
-              
-              
-              
-              <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
-                
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
-                  <input type="hidden" name="search" value="shoulder">
-
-                  <a href="#" onclick="this.parentNode.submit();">Shoulder</a>
-                </form> </li>
-                  <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
-                  <input type="hidden" name="search" value="tote">
-
-                  <a href="#" onclick="this.parentNode.submit();">Tote</a>
-                </form> </li>
-                  <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
-                  <input type="hidden" name="search" value="cross body">
-
-                  <a href="#" onclick="this.parentNode.submit();">Cross Body</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
-                  <input type="hidden" name="search" value="clutch">
-
-                  <a href="#" onclick="this.parentNode.submit();">Clutch </a>
-                </form> </li>
-                
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
-                  <input type="hidden" name="search" value="evening">
-
-                  <a href="#" onclick="this.parentNode.submit();">Evening</a>
-                </form></li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
-                  <a href="#" onclick="this.parentNode.submit();">View All</a>
-                </form> </li>
-                
-                
-                
-              </ul>
-              
-              
-              
-              
-                
-                <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
-                <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs"> 
-                
-                   
-                    <img class="img-responsive hidden-md hidden-sm hidden-xs" src="/images/pages/header/navigation/handbags.jpg" alt="img"> 
-                    
-                    
-                    
-                 </li>
-                    
-              </ul>
-                
-                <div class="col-lg-12">
-            <form method="post" action="/shop">
-            <div class="input-group custom-search-form">
-              <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women's Handbags & Bags">
-              <input type="text" id="search" name="search"class="form-control" placeholder="Search Handbags" style="margin-top: 20px;">
-              <span class="input-group-btn">
-              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
-              <span class="glyphicon glyphicon-search"></span>
-             </button>
-             </span>
-             </div><!-- /input-group -->
-        </div>
-</form>
-              
-            </li>
-              
-          </ul>
-        </li>
-          <li class="dropdown megamenu-40width"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">  SHOES <b class="caret"> </b> </a>
-          <ul class="dropdown-menu">
-            <li class="megamenu-content"> 
-              
-              <!-- megamenu-content -->
-              
-              <h3 class="promo-1 no-margin hidden-xs"> Shoes </h3>
-              <br>
-              
-              
-              
-              <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
-                
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes:Heels">
-                  <a href="#" onclick="this.parentNode.submit();">Heels</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes:Boots">
-                  <a href="#" onclick="this.parentNode.submit();">Boots</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes:Flats">
-                  <a href="#" onclick="this.parentNode.submit();">Flats</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes:Sandals">
-                  <a href="#" onclick="this.parentNode.submit();">Sandals</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes">
-                  <a href="#" onclick="this.parentNode.submit();">View All</a>
-                </form> </li>
-                
-              </ul>
-              
-                
-                <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
-                <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs"> 
-                
-                   
-                    <img class="img-responsive hidden-md hidden-sm hidden-xs" src="/images/pages/header/navigation/shoes.jpg" alt="img"> 
-                    
-                    
-                    
-                 </li>
-                    
-              </ul>
-                
-                <div class="col-lg-12">
-            <form method="post" action="/shop">
-            <div class="input-group custom-search-form">
-              <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women's Shoes">
-              <input type="text" id="search" name="search"class="form-control" placeholder="Search Shoes" style="margin-top: 20px;">
-              <span class="input-group-btn">
-              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
-              <span class="glyphicon glyphicon-search"></span>
-             </button>
-             </span>
-             </div><!-- /input-group -->
-        </div>
-</form>
-              
-            </li>
-              
-          </ul>
-        </li>
-<li class="dropdown megamenu-40width"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">  JEWELRY <b class="caret"> </b> </a>
-          <ul class="dropdown-menu">
-            <li class="megamenu-content"> 
-              
-              <!-- megamenu-content -->
-              
-              <h3 class="promo-1 no-margin hidden-xs"> Jewelry</h3>
-              <br>
-              
-              
-              <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
-               
-                <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Necklace">
-
-                  <a href="#" onclick="this.parentNode.submit();">Necklaces</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Bracelet">
-
-                  <a href="#" onclick="this.parentNode.submit();">Bracelets</a>
-                </form> </li>
-                
-                
-              </ul>
-                
-                <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
-                <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs"> 
-                
-              
-                    <img class="img-responsive hidden-sm hidden-md hidden-xs" src="/images/pages/header/navigation/jewelry.jpg" alt="img"> 
-                    
-                    
-                    
-                 </li>
-                    
-              </ul>
-                
-                <div class="col-lg-12">
-            <form method="post" action="/shop">
-            <div class="input-group custom-search-form">
-             
-              <input type="text" id="search" name="search"class="form-control" placeholder="Search Jewelry" style="margin-top: 20px;">
-              <span class="input-group-btn">
-              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
-              <span class="glyphicon glyphicon-search"></span>
-             </button>
-             </span>
-             </div><!-- /input-group -->
-        </div>
-</form>
-              
-            </li>
-              
-          </ul>
-        </li>
-          <li class="dropdown megamenu-40width"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">  ACCESSORIES <b class="caret"> </b> </a>
-          <ul class="dropdown-menu">
-            <li class="megamenu-content"> 
-              
-              <!-- megamenu-content -->
-              
-              <h3 class="promo-1 no-margin hidden-xs"> Accessories</h3>
-              <br>
-              
-              
-              <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
-                <li class="no-border">
-                  <p> <strong> Accessories </strong> </p>
-                </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories:Scarves & Wraps">
-                  <a href="#" onclick="this.parentNode.submit();">Scarves</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories:Sunglasses">
-                  <a href="#" onclick="this.parentNode.submit();">Sunglasses</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories:Wallets">
-                  <a href="#" onclick="this.parentNode.submit();">Wallets</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories">
-                  <a href="#" onclick="this.parentNode.submit();">View All</a>
-                </form></li>
-                
-              </ul>
-                
-                <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
-                <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs"> 
-                
-              
-                    <img class="img-responsive hidden-sm hidden-md hidden-xs" src="/images/pages/header/navigation/accessories.jpg" alt="img"> 
-                    
-                    
-                    
-                 </li>
-                    
-              </ul>
-                
-                <div class="col-lg-12">
-            <form method="post" action="/shop">
-            <div class="input-group custom-search-form">
-              <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women's Accessories">
-              <input type="text" id="search" name="search"class="form-control" placeholder="Search Accessories" style="margin-top: 20px;">
-              <span class="input-group-btn">
-              <button class="btn btn-default hidden-md" type="submit" style="margin-top: 20px;" onclick="$(this).closest('form').submit();">
-              <span class="glyphicon glyphicon-search"></span>
-             </button>
-             </span>
-             </div><!-- /input-group -->
-        </div>
-</form>
-              
-            </li>
-              
-          </ul>
-        </li>
-          <li class="dropdown megamenu-40width"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">  BY DESIGNER <b class="caret"> </b> </a>
-          <ul class="dropdown-menu">
-            <li class="megamenu-content"> 
-              
-              <!-- megamenu-content -->
-              
-              <h3 class="promo-1 no-margin hidden-xs"> Designers</h3>
-              <br>
-              
-              
-              <ul class="col-lg-6  col-sm-6 col-md-6 unstyled">
-                <li class="no-border">
-                  <p> <strong> Designers</strong> </p>
-                </li>
-
-                <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Louis Vuitton">
-
-                  <a href="#" onclick="this.parentNode.submit();">Louis Vuitton</a>
-                </form></li>
-
-                <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Chanel">
-
-                  <a href="#" onclick="this.parentNode.submit();">Chanel</a>
-                </form></li>
-
-                <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Prada">
-
-                  <a href="#" onclick="this.parentNode.submit();">Prada</a>
-                </form></li>
-                <li><form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Gucci">
-
-                  <a href="#" onclick="this.parentNode.submit();">Gucci</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Lululemon">
-
-                  <a href="#" onclick="this.parentNode.submit();">Lululemon</a>
-                </form> </li>
-                <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Hermes">
-
-                  <a href="#" onclick="this.parentNode.submit();">Hermes</a>
-                </form>
-              </li>
-                  <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Jimmy Choo">
-
-                  <a href="#" onclick="this.parentNode.submit();">Jimmy Choo</a>
-                </form></li>
-
-                  <li> <form method="post" action="/shop">
-                  
-                  <input type="hidden" name="search" value="Burberry">
-
-                  <a href="#" onclick="this.parentNode.submit();">Burberry</a>
-                </form> </li>
-                
-              </ul>
-                
-                <ul class="col-lg-6  col-sm-6 col-md-6 col-xs-6 hidden-sm hidden-xs">
-                <li class="no-margin productPopItem hidden-sm hidden-md hidden-xs"> 
-                
-                   
-                    <img class="img-responsive hidden-sm hidden-md hidden-xs" src="/images/pages/header/navigation/top-designers.jpg" alt="img"> 
-                  
-                    
-                    
-                 </li>
-                    
-              </ul>
-                
-                <div class="col-lg-12">
-            <div class="input-group custom-search-form">
-              <input type="text" class="form-control" placeholder="Search Designers" style="margin-top: 20px;">
-              <span class="input-group-btn">
-              <button class="btn btn-default hidden-md" type="button" style="margin-top: 20px;">
-              <span class="glyphicon glyphicon-search"></span>
-             </button>
-             </span>
-             </div><!-- /input-group -->
-        </div>
-              
-            </li>
-              
-          </ul>
-        </li>
-        <li> <a href="http://allforfunds.com/sell" style="color: #d4af37;">Sell</a></li>
-           
-          
-          
-          
-        
-          
-      </ul>
-        <div class="cartMenu hidden-md hidden-sm hidden-xs"> <% if current_user != nil then %><a href="/cart" class="dropdown-toggle"> <% end %> <% if current_user == nil then %><a href="#" data-toggle="modal" data-target="#ModalLogin" class="dropdown-toggle"> <% end %><i class="fa fa-shopping-cart" style="padding-top: 5px; padding-left: 8px;"> </i> <span class="cartRespons"></span> </a>
-          
-          <!--/.dropdown-menu--> 
-        </div>
-       
-      <div class="col-sm-3 col-md-3 pull-right">
-        <form class="navbar-form hidden-md hidden-xs hidden-sm" role="search"  method="GET" action="/shop">
-        <div class="input-group">
-            <div id="multiple-datasets">
-            <input class="typeahead unstyled" type="text" placeholder="Search products and designers" name="search" id="search">
-          </div>
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-        </form>
-          <form method="GET" action="/shop">
-          <div class="input-group custom-search-form hidden-lg">
-              <input type="text" class="form-control" name="search" id="search" placeholder="Search products and designers">
-              <span class="input-group-btn">
-              <button class="btn btn-default hidden-md" type="submit">
-              <span class="glyphicon glyphicon-search"></span>
-             </button>
-             </span>
-             </div><!-- /input-group -->
-          </form>
-        </div>
-      <!--- navbar social icon || this part will be hidden on mobile version -->
-      <div class="nav navbar-nav pull-right">
-           
- 
-          
-          
-      </div><!--/.navbar-right || social icon end-->
-      
-    </div><!--/.nav-collapse --> 
-    
-  </div> <!--/.container -->
-  
-  
-  <!--/.search-full ||  search form here--> 
-  
-  </div> <!--/.w100-full--> 
-  
-</div>
-<!-- Modal -->
-<div class="modal fade" id="couponModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-<h4 class="modal-title" id="myModalLabel">Subscription Form Demo</h4>
-
-<p>This is Bootstrap Modal popup example.</p>
-</div>
-<div class="modal-body">
-
-<!--End mc_embed_signup-->
-
-<!-- Begin MailChimp Signup Form -->
-<form class="form-horizontal" role="form">
-<div class="form-group">
-<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-<div class="col-sm-10">
-<input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL"/>
-</div>
-</div>
-<div id="mce-responses" class="clear">
-<div class="response" id="mce-error-response" style="display:none"></div>
-<div class="response" id="mce-success-response" style="display:none"></div>
-</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-<div style="position: absolute; left: -5000px;"><input type="text" name="b_9e279011b21a23e1aed5e4868_cca4394bc9" value=""/></div>
-<div class="form-group remove-bottom">
-<div class="col-sm-offset-2 col-sm-10">
-<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default"/>
-</div>
-</div>
-</form>
-
-<!--End mc_embed_signup-->
-</div>
-<div class="modal-footer remove-top">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-<button type="button" class="btn btn-primary">Save changes</button>
-</div>
-</div>
-</div>
-</div>
+  </div>
+</header>

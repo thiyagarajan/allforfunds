@@ -743,6 +743,7 @@ legend {
   color: #FFFFFF;
   font-size: 28px;
   font-weight: bold;
+  height: 100%;
 }
 
 .navbar .navbar-top {
@@ -764,7 +765,6 @@ legend {
   -moz-transition: all 0.2s ease-out 0s;
   -ms-transition: all 0.2s ease-out 0s;
   -o-transition: all 0.2s ease-out 0s;
-  height: 125px;
 }
 
 /***  ------- Mega Menu Start ------- ***/
@@ -1181,13 +1181,6 @@ legend {
 
 .colorWhite, .colorWhite i {
   color: #fff !important;
-}
-
-.navbar-brand {
-  max-height: 40px;
-  overflow: visible;
-  padding-top: 0;
-  padding-bottom: 20;
 }
 
 .promo-1 {
@@ -4633,10 +4626,6 @@ tr.CartProduct td {
     padding-top: 2px !important;
   }
 
-  .navbar-brand {
-    v \ padding : 15 px;
-  }
-
   .miniCartFooter {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
     border-top: 2px solid rgba(255, 255, 255, 0.5) !important;
@@ -5261,19 +5250,6 @@ tr.CartProduct td {
   position: relative;
 }
 
-@media (min-width: 800px) {
-
-  .navbar-brand {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    text-align: center;
-    margin: auto;
-  }
-
-}
-
 div.swapper {
   height: auto;
   margin: 10px;
@@ -5496,4 +5472,38 @@ header .navbar{
 
 .slider-container img{
   width: 100%;
+}
+
+a.sell{
+  background-color: #b99666;
+  padding: 10px;
+  color: #ffffff;
+}
+
+a.shop {
+  background-color: #1a1a1a;
+  padding: 10px;
+  color: #ffffff;
+}
+
+.sell_shop{
+  height: 40px;
+}
+
+ul.sub-menu li{
+  display: inline-block;
+}
+
+.navbar-brand img {
+  max-height: 80px;
+}
+
+.typeahead{
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.header-search .btn-default{
+  background-color: #ffffff !important;
+  color: #000 !important
 }
