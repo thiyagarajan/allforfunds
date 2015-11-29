@@ -5503,3 +5503,7 @@ ul.sub-menu li{
   background-color: #ffffff !important;
   color: #000 !important
 }
+
+.navbar-nav {
+  height: auto !important;
+}
