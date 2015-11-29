@@ -7,44 +7,57 @@
           <ul>
             <li class="supportLi">
               <p> Available 8am to 5pm MST</p>
-                <p>Monday - Friday </p>
-              <h4> <a class="inline" href="callto:+7207084907"> <strong> <i class="fa fa-phone"> </i> 720 708 4907 </strong> </a> </h4>
-              <h4> <a class="inline" href="mailto:info@allforfunds.com"> <i class="fa fa-envelope-o"> </i> info@AllForFunds.com</a> </h4>
+
+              <p>Monday - Friday </p>
+              <h4><a class="phone inline" href="callto:+7207084907">
+                <strong> 720 708 4907 </strong> </a></h4>
+              <h4><a class="inline" href="mailto:info@allforfunds.com">
+                info@allforfunds.com</a></h4>
             </li>
           </ul>
         </div>
         <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
           <h3> Shop </h3>
           <ul>
-            
-            <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing">
-                  <a href="#" onclick="this.parentNode.submit();">Clothing </a>
-                </form></li>
-           <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes">
-                  <a href="#" onclick="this.parentNode.submit();">Shoes </a>
-                </form></li>
-              <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
-                  <a href="#" onclick="this.parentNode.submit();">Handbags</a>
-                </form></li>
-                
-              <li> <li> <form method="post" action="/shop">
-                  <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories">
-                  <a href="#" onclick="this.parentNode.submit();">Accessories </a>
-                </form></li> </li>
+
+            <li>
+              <form method="post" action="/shop">
+                <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Clothing">
+                <a href="#" onclick="this.parentNode.submit();">Clothing </a>
+              </form>
+            </li>
+            <li>
+              <form method="post" action="/shop">
+                <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Shoes">
+                <a href="#" onclick="this.parentNode.submit();">Shoes </a>
+              </form>
+            </li>
+            <li>
+              <form method="post" action="/shop">
+                <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Handbags & Bags">
+                <a href="#" onclick="this.parentNode.submit();">Handbags</a>
+              </form>
+            </li>
+
+            <li>
+            <li>
+              <form method="post" action="/shop">
+                <input type="hidden" name="category" value="Clothing, Shoes & Accessories:Women\'s Accessories">
+                <a href="#" onclick="this.parentNode.submit();">Accessories </a>
+              </form>
+            </li>
+            </li>
           </ul>
         </div>
         <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
           <h3> Information </h3>
           <ul>
-            <li> <a href="http://allforfunds.com/sell"> Start Selling </a> </li>
-            <li> <a href="http://allforfunds.com/authenticity"> Item Authenticity Guarantee </a> </li>
-            <li> <a href="http://allforfunds.com/about"> About Us </a> </li>
-            <li> <a href="http://allforfunds.com/returns"> Refunds and Returns </a> </li>
-            <li> <a href="http://allforfunds.com/privacy"> Privacy Policy </a> </li>
-            <li> <a href="http://allforfunds.com/terms"> Terms &amp; Conditions </a> </li>
+            <li><a href="http://allforfunds.com/sell"> Start Selling </a></li>
+            <li><a href="http://allforfunds.com/authenticity"> Item Authenticity Guarantee </a></li>
+            <li><a href="http://allforfunds.com/about"> About Us </a></li>
+            <li><a href="http://allforfunds.com/returns"> Refunds and Returns </a></li>
+            <li><a href="http://allforfunds.com/privacy"> Privacy Policy </a></li>
+            <li><a href="http://allforfunds.com/terms"> Terms &amp; Conditions </a></li>
           </ul>
         </div>
         <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
@@ -52,27 +65,27 @@
           <ul>
             <a href="#" data-toggle="modal" data-target="#ModalSignup"> Sign Up </a>
             <% if current_user != nil then %>
-            <li> <a href="http://allforfunds.com/account"> My Account </a> </li>
+                <li><a href="http://allforfunds.com/account"> My Account </a></li>
             <% end %>
             <% if current_user === nil then %>
-<li> <a href="#" data-toggle="modal" data-target="#ModalLogin"> My Account </a> </li>
-<% end %>
+                <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> My Account </a></li>
+            <% end %>
 
-<% if current_user != nil then %>
-            <li> <a href="http://allforfunds.com/account/information"> My Information </a> </li>
-            <% end %>
-            <% if current_user === nil then %>
-<li> <a href="#" data-toggle="modal" data-target="#ModalLogin"> My Information </a> </li>
-<% end %>
-            
             <% if current_user != nil then %>
-            <li> <a href="http://allforfunds.com/account/orders"> Order History </a> </li>
+                <li><a href="http://allforfunds.com/account/information"> My Information </a></li>
             <% end %>
             <% if current_user === nil then %>
-<li> <a href="#" data-toggle="modal" data-target="#ModalLogin"> Order History </a> </li>
-<% end %>
-              
-              
+                <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> My Information </a></li>
+            <% end %>
+
+            <% if current_user != nil then %>
+                <li><a href="http://allforfunds.com/account/orders"> Order History </a></li>
+            <% end %>
+            <% if current_user === nil then %>
+                <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> Order History </a></li>
+            <% end %>
+
+
           </ul>
         </div>
         <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
@@ -81,126 +94,141 @@
             <li>
               <div class="input-append newsLatterBox text-center">
                 <!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-  #mc_embed_signup{background:#EDEFF1; clear:left; font:14px Helvetica,Arial,sans-serif; }
-  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup text-center input-append newsLatterBox ">
-<form action="//allforfunds.us5.list-manage.com/subscribe/post?u=ad06f828d87f1c712542ad39f&amp;id=00b6ce5c44" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-  
-  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder=" Email Address" required style="width:100%;">
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;"><input type="text" name="b_ad06f828d87f1c712542ad39f_00b6ce5c44" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn"></div>
-    </div>
-</form>
-</div>
+                <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                    #mc_embed_signup {
+                        background: #EDEFF1;
+                        clear: left;
+                        font: 14px Helvetica, Arial, sans-serif;
+                    }
 
-<!--End mc_embed_signup-->
+                    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <div id="mc_embed_signup text-center input-append newsLatterBox ">
+                  <form action="//allforfunds.us5.list-manage.com/subscribe/post?u=ad06f828d87f1c712542ad39f&amp;id=00b6ce5c44" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+
+                      <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder=" Email Address" required style="width:100%;">
+                      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <div style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_ad06f828d87f1c712542ad39f_00b6ce5c44" tabindex="-1" value=""></div>
+                      <div class="clear">
+                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!--End mc_embed_signup-->
               </div>
             </li>
           </ul>
           <ul class="social">
-            <li> <a target="_blank" href="https://www.facebook.com/pages/AllForFundscom/205378972832597"> <i class=" fa fa-facebook"> &nbsp; </i> </a> </li> 
-            <li> <a target="_blank" href="http://twitter.com/allforfunds"> <i class="fa fa-twitter"> &nbsp; </i> </a> </li>
-            <li> <a target="_blank" href="mailto:info@allforfunds.com"> <i class="fa fa-envelope"> &nbsp; </i> </a> </li>
-            <li> <a target="_blank" href="http://pinterest.com/allforfunds"> <i class="fa fa-pinterest"> &nbsp; </i> </a> </li>
-            <li> <a target="_blank" href="http://instagram.com/allforfunds">  <i class="fa fa-instagram"> &nbsp; </i> </a> </li>
-              <li> <a target="_blank" href="https://plus.google.com/114559517260205523346">  <i class="fa fa-google-plus"> &nbsp; </i> </a> </li>
+            <li><a target="_blank" href="https://www.facebook.com/pages/AllForFundscom/205378972832597">
+              <i class=" fa fa-facebook"> &nbsp; </i> </a></li>
+            <li><a target="_blank" href="http://twitter.com/allforfunds"> <i class="fa fa-twitter"> &nbsp; </i> </a>
+            </li>
+            <li><a target="_blank" href="mailto:info@allforfunds.com"> <i class="fa fa-envelope"> &nbsp; </i> </a></li>
+            <li><a target="_blank" href="http://pinterest.com/allforfunds"> <i class="fa fa-pinterest"> &nbsp; </i> </a>
+            </li>
+            <li><a target="_blank" href="http://instagram.com/allforfunds"> <i class="fa fa-instagram"> &nbsp; </i> </a>
+            </li>
+            <li><a target="_blank" href="https://plus.google.com/114559517260205523346">
+              <i class="fa fa-google-plus"> &nbsp; </i> </a></li>
           </ul>
         </div>
       </div>
-      <!--/.row--> 
+      <!--/.row-->
     </div>
-    <!--/.container--> 
+    <!--/.container-->
   </div>
   <!--/.footer-->
-  
+
   <div class="footer-bottom">
     <div class="container">
       <p class="pull-left"> &copy; All For Funds LLC. 2011-2015 </p>
-      <div class="pull-right paymentMethodImg"> <img height="30" class="pull-right" src="/images/pages/footer/payment/master_card.png" alt="img" > <img height="30" class="pull-right" src="/images/pages/footer/payment/paypal.png" alt="img" > <img height="30" class="pull-right" src="/images/pages/footer/payment/american_express_card.png" alt="img" > <img  height="30" class="pull-right" src="/images/pages/footer/payment/discover_network_card.png" alt="img" > <img  height="30" class="pull-right" src="/images/pages/footer/payment/google_wallet.png" alt="img" > </div>
+
+      <div class="pull-right paymentMethodImg">
+        <img height="30" class="pull-right" src="/images/pages/footer/payment/cc.png" alt="img"></div>
     </div>
   </div>
-  <!--/.footer-bottom--> 
-    
+  <!--/.footer-bottom-->
+
 </footer>
 
 
 
 <!-- Le javascript
-================================================== --> 
+================================================== -->
 
-<!-- Placed at the end of the document so the pages load faster --> 
+<!-- Placed at the end of the document so the pages load faster -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="/assets/bootstrap/js/bootstrap.min.js"></script> 
-<script src="/assets/js/idangerous.swiper-2.1.min.js"></script> 
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/idangerous.swiper-2.1.min.js"></script>
 <script>
-  var mySwiper = new Swiper('.swiper-container',{
-  pagination: '.box-pagination',
- keyboardControl: true,
-    paginationClickable: true,
-    slidesPerView: 'auto',
-  autoResize:true,
-  resizeReInit:true,
-  })
-  
-     $('.prevControl').on('click', function(e){
-    e.preventDefault()
-    mySwiper.swipePrev()
-  })
-  $('.nextControl').on('click', function(e){
-    e.preventDefault()
-    mySwiper.swipeNext()
-  })
-  </script> 
+    var mySwiper = new Swiper('.swiper-container', {
+        pagination: '.box-pagination',
+        keyboardControl: true,
+        paginationClickable: true,
+        slidesPerView: 'auto',
+        autoResize: true,
+        resizeReInit: true,
+    })
+
+    $('.prevControl').on('click', function (e) {
+        e.preventDefault()
+        mySwiper.swipePrev()
+    })
+    $('.nextControl').on('click', function (e) {
+        e.preventDefault()
+        mySwiper.swipeNext()
+    })
+</script>
 
 
 
-<!-- include easing plugin --> 
-<script src="/assets/js/jquery.easing.1.3.js"></script> 
+<!-- include easing plugin -->
+<script src="/assets/js/jquery.easing.1.3.js"></script>
 
-<!-- include  parallax plugin --> 
-<script type="text/javascript"  src="/assets/js/jquery.parallax-1.1.js"></script> 
+<!-- include  parallax plugin -->
+<script type="text/javascript" src="/assets/js/jquery.parallax-1.1.js"></script>
 
-<!-- optionally include helper plugins --> 
-<script type="text/javascript"  src="/assets/js/helper-plugins/jquery.mousewheel.min.js"></script> 
+<!-- optionally include helper plugins -->
+<script type="text/javascript" src="/assets/js/helper-plugins/jquery.mousewheel.min.js"></script>
 
-<!-- include mCustomScrollbar plugin //Custom Scrollbar  --> 
+<!-- include mCustomScrollbar plugin //Custom Scrollbar  -->
 
-<script type="text/javascript" src="/assets/js/jquery.mCustomScrollbar.js"></script> 
+<script type="text/javascript" src="/assets/js/jquery.mCustomScrollbar.js"></script>
 
-<!-- include checkRadio plugin //Custom check & Radio  --> 
-<script type="text/javascript" src="/assets/js/ion-checkRadio/ion.checkRadio.min.js"></script> 
+<!-- include checkRadio plugin //Custom check & Radio  -->
+<script type="text/javascript" src="/assets/js/ion-checkRadio/ion.checkRadio.min.js"></script>
 
-<!-- include grid.js // for equal Div height  --> 
-<script src="/assets/js/grids.js"></script> 
+<!-- include grid.js // for equal Div height  -->
+<script src="/assets/js/grids.js"></script>
 
-<!-- include carousel slider plugin  --> 
-<script src="/assets/js/owl.carousel.min.js"></script> 
+<!-- include carousel slider plugin  -->
+<script src="/assets/js/owl.carousel.min.js"></script>
 
-<!-- jQuery minimalect // custom select   --> 
-<script src="/assets/js/jquery.minimalect.min.js"></script> 
+<!-- jQuery minimalect // custom select   -->
+<script src="/assets/js/jquery.minimalect.min.js"></script>
 
-<!-- include touchspin.js // touch friendly input spinner component   --> 
-<script src="/assets/js/bootstrap.touchspin.js"></script> 
+<!-- include touchspin.js // touch friendly input spinner component   -->
+<script src="/assets/js/bootstrap.touchspin.js"></script>
 
-<!-- include custom script for site  --> 
+<!-- include custom script for site  -->
 
 
 <script>
-$(document).ready(function() {
- 
-  $("imageShowCase").owlCarousel({
-    
-    lazyLoad : true,
-    
-  }); 
- 
-});
+    $(document).ready(function () {
+
+        $("imageShowCase").owlCarousel({
+
+            lazyLoad: true,
+
+        });
+
+    });
 </script>
 <script type="text/javascript" src="/assets/js/typeahead/bloodhound.min.js"></script>
 <script type="text/javascript" src="/assets/js/typeahead/typeahead.bundle.min.js"></script>
@@ -208,49 +236,56 @@ $(document).ready(function() {
 
 
 <script>
-var designers = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('brand'),
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  prefetch: 'assets/js/typeahead/nba.json'
-});
- 
-var nhlTeams = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace(''),
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  prefetch: 'assets/js/typeahead/nba.json'
-});
- 
-designers.initialize();
-nhlTeams.initialize();
- 
-$('#multiple-datasets .typeahead').typeahead({
-  highlight: true
-},
-{
-  name: 'nba-teams',
-  displayKey: 'brand',
-  source: designers.ttAdapter(),
-  templates: {
-    header: '<h4 class="league-name">Designers</h4>'
-  }
-},
-{
-  name: 'nhl-teams',
-  displayKey: 'team',
-  source: nhlTeams.ttAdapter(),
-  templates: {
-    header: '<h4 class="league-name">NHL Teams</h4>'
-  }
-});
+    var designers = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('brand'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: 'assets/js/typeahead/nba.json'
+    });
+
+    var nhlTeams = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace(''),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: 'assets/js/typeahead/nba.json'
+    });
+
+    designers.initialize();
+    nhlTeams.initialize();
+
+    $('#multiple-datasets .typeahead').typeahead({
+                highlight: true
+            },
+            {
+                name: 'nba-teams',
+                displayKey: 'brand',
+                source: designers.ttAdapter(),
+                templates: {
+                    header: '<h4 class="league-name">Designers</h4>'
+                }
+            },
+            {
+                name: 'nhl-teams',
+                displayKey: 'team',
+                source: nhlTeams.ttAdapter(),
+                templates: {
+                    header: '<h4 class="league-name">NHL Teams</h4>'
+                }
+            });
 </script>
 
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-39852731-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-39852731-1', 'auto');
+    ga('send', 'pageview');
 
 </script>
