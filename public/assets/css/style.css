@@ -73,6 +73,7 @@ body {
   font-size: 14px;
   line-height: 21px;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* =============================================================== */
@@ -5481,4 +5482,18 @@ input#mc-embedded-subscribe {
 
 .featured-categories {
   background-color: #eaeaea;
+}
+
+header .navbar{
+  margin-bottom: 0;
+}
+
+.slider-container {
+  background-color: #c9c6b5;
+  height: 100%;
+  padding-bottom: 0;
+}
+
+.slider-container img{
+  width: 100%;
 }

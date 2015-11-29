@@ -64,25 +64,25 @@
 <%= render 'layouts/login' %>
 
 <%= render 'layouts/signup' %>
-<!-- Fixed navbar start -->
-<%= render 'layouts/nav' %>
+
+<header>
+  <%= render 'layouts/nav' %>
+</header>
 
 <!-- /.Fixed navbar  -->
 <!-- Here from shop by price block -->
 
 
-<div class="container main-container globalPaddingBottom">
-  <div class="col-lg-12 text-center">
-
-    <div class="home-intro">
-      <h2>Discover a Better Shopping <span>Experience</span> - clothes, fashion &amp; more </h2>
-    </div>
-    <br>
+<div class="col-lg-12 text-center" style="background-color: #c9c6b5;">
+  <div class="home-intro">
+    <h2>Discover a Better Shopping <span>Experience</span> - clothes, fashion &amp; more </h2>
   </div>
+  <br>
+</div>
 
-
+<div class="slider-container">
   <!-- Main component call to action -->
-  <div class="image-show-case-wrapper center-block relative col-lg-12">
+  <div class="image-show-case-wrapper center-block relative col-lg-12" style="background-color: #c9c6b5;">
     <div id="imageShowCase" class="owl-carousel owl-theme">
       <div class="product-slide">
         <div class="box-content-overly box-content-overly-white">
@@ -155,6 +155,9 @@
     <div style="clear:both"></div>
   </div>
   <!--/.image-show-case-wrapper -->
+</div>
+
+<div class="container main-container globalPaddingBottom">
 
   <div class="row featuredPostContainer">
     <div class="featuredImageLook3 col-lg-12">
