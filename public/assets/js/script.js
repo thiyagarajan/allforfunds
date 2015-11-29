@@ -276,7 +276,7 @@ $(document).ready(function() {
     });
 
     $(function() {
-        $('.featuredImageLook3 .inner').responsiveEqualHeightGrid(); // add class with selector class equalheight
+        //$('.featuredImageLook3 .inner').responsiveEqualHeightGrid(); // add class with selector class equalheight
     });
     /*=======================================================================================
 	 Code for tablet device || responsive check
