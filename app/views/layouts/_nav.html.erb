@@ -70,12 +70,10 @@
     </div>
     <!-- /w100 -->
 
-    <div class="w100 menuWrap boarder-menu" style="border-bottom: none;">
+    <div class="w100 menuWrap boarder-menu" style="background-color: #dbd9cf;border-bottom: none;">
       <div class="container">
 
-
         <!-- this part is duplicate from cartMenu  keep it for mobile -->
-
 
         <div class="navbar-collapse collapse">
 
@@ -606,45 +604,10 @@
 
               </ul>
             </li>
-            <li><a href="http://allforfunds.com/sell" style="color: #d4af37;">Sell</a></li>
-
+            <li><a href="http://allforfunds.com/sell">Sell</a></li>
 
           </ul>
-          <div class="cartMenu hidden-md hidden-sm hidden-xs">
-            <% if current_user != nil then %><a href="/cart" class="dropdown-toggle">
-            <% end %>
-            <% if current_user == nil then %>
-                <a href="#" data-toggle="modal" data-target="#ModalLogin" class="dropdown-toggle">
-            <% end %><i class="fa fa-shopping-cart" style="padding-top: 5px; padding-left: 8px;"> </i>
-            <span class="cartRespons"></span> </a>
 
-            <!--/.dropdown-menu-->
-          </div>
-
-          <div class="col-sm-3 col-md-3 pull-right">
-            <form class="navbar-form hidden-md hidden-xs hidden-sm" role="search" method="GET" action="/shop">
-              <div class="input-group">
-                <div id="multiple-datasets">
-                  <input class="typeahead unstyled" type="text" placeholder="Search products and designers" name="search" id="search">
-                </div>
-                <div class="input-group-btn">
-                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-              </div>
-            </form>
-            <form method="GET" action="/shop">
-              <div class="input-group custom-search-form hidden-lg">
-                <input type="text" class="form-control" name="search" id="search" placeholder="Search products and designers">
-              <span class="input-group-btn">
-              <button class="btn btn-default hidden-md" type="submit">
-                <span class="glyphicon glyphicon-search"></span>
-              </button>
-             </span>
-              </div>
-              <!-- /input-group -->
-            </form>
-          </div>
-          <!--- navbar social icon || this part will be hidden on mobile version -->
           <div class="nav navbar-nav pull-right">
 
 

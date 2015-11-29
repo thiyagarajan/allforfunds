@@ -974,8 +974,7 @@ legend {
     }
 
     .navbar-nav > li > a {
-
-      color: #fff;
+      color: #242424;
       font-size: 13px;
 
       text-transform: uppercase;
@@ -984,14 +983,11 @@ legend {
 
   @media (max-width: 979px) {
     .navbar-nav > li > a {
-      color: #fff;
+      color: #242424;
       font-size: 14px;
-
       text-transform: uppercase;
     }
   }
-}
-
 }
 
 .search-box {
