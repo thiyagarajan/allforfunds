@@ -2457,8 +2457,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
 .featuredImageLook3 .inner {
   display: block;
   position: relative;
-  margin: 10px 0;
-  border: 3px solid #ffffff;
+  margin: 15px 0;
 }
 
 .image-show-case-wrapper .ps-nav {
@@ -5459,6 +5458,7 @@ input#mc-embedded-subscribe {
 .featured-categories {
   background-color: #eaeaea;
   display: inline-block;
+  padding: 15px 0;
 }
 
 header .navbar {
@@ -5523,4 +5523,19 @@ ul.sub-menu li {
 
 .white-border:hover{
   border: 5px solid transparent;
+}
+
+.featured-categories .col-md-7{
+  width: 63%;
+}
+
+.featured-categories .col-md-5{
+  width: 37%;
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+.featured-categories .left img{
+  max-height: 270px;
+  max-height: 270px;
 }
