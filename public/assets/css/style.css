@@ -76,6 +76,10 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  width: 1030px;
+}
+
 /* =============================================================== */
 /* TYPOGRAPHY + GLOBAL CLASS
 /* =============================================================== */
@@ -2357,7 +2361,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
 }
 
 .boxes-title-1 {
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: normal;
   letter-spacing: 1px;
   line-height: 1.2;
@@ -5327,7 +5331,7 @@ div.thumbnail {
 .typeahead,
 .tt-query,
 .tt-hint {
-  width: 260px;
+  width: 200px;
   height: 30px;
   padding: 8px 12px;
   font-size: 24px;
@@ -5454,9 +5458,10 @@ input#mc-embedded-subscribe {
 
 .featured-categories {
   background-color: #eaeaea;
+  display: inline-block;
 }
 
-header .navbar{
+header .navbar {
   margin-bottom: 0;
 }
 
@@ -5466,11 +5471,11 @@ header .navbar{
   padding-bottom: 0;
 }
 
-.slider-container img{
+.slider-container img {
   width: 100%;
 }
 
-a.sell{
+a.sell {
   background-color: #b99666;
   padding: 10px;
   color: #ffffff;
@@ -5482,11 +5487,11 @@ a.shop {
   color: #ffffff;
 }
 
-.sell_shop{
+.sell_shop {
   height: 40px;
 }
 
-ul.sub-menu li{
+ul.sub-menu li {
   display: inline-block;
 }
 
@@ -5494,16 +5499,28 @@ ul.sub-menu li{
   max-height: 80px;
 }
 
-.typeahead{
+.typeahead {
   background-color: #ffffff !important;
   border-color: #ffffff !important;
 }
 
-.header-search .btn-default{
+.header-search .btn-default {
   background-color: #ffffff !important;
   color: #000 !important
 }
 
 .navbar-nav {
   height: auto !important;
+}
+
+.white-border{
+  position: absolute;
+  height: 83%;
+  width: 87%;
+  border: 5px solid #ffffff;
+  margin: 20px;
+}
+
+.white-border:hover{
+  border: 5px solid transparent;
 }
