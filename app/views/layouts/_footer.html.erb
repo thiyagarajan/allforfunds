@@ -67,12 +67,12 @@
         <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
           <h3> Information </h3>
           <ul>
-            <li><a href="http://allforfunds.com/sell"> Start Selling </a></li>
-            <li><a href="http://allforfunds.com/authenticity"> Item Authenticity Guarantee </a></li>
-            <li><a href="http://allforfunds.com/about"> About Us </a></li>
-            <li><a href="http://allforfunds.com/returns"> Refunds and Returns </a></li>
-            <li><a href="http://allforfunds.com/privacy"> Privacy Policy </a></li>
-            <li><a href="http://allforfunds.com/terms"> Terms &amp; Conditions </a></li>
+            <li><a href="/sell"> Start Selling </a></li>
+            <li><a href="/authenticity"> Item Authenticity Guarantee </a></li>
+            <li><a href="/about"> About Us </a></li>
+            <li><a href="/returns"> Refunds and Returns </a></li>
+            <li><a href="/privacy"> Privacy Policy </a></li>
+            <li><a href="/terms"> Terms &amp; Conditions </a></li>
           </ul>
         </div>
         <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
@@ -80,27 +80,26 @@
           <ul>
             <a href="#" data-toggle="modal" data-target="#ModalSignup"> Sign Up </a>
             <% if current_user != nil then %>
-                <li><a href="http://allforfunds.com/account"> My Account </a></li>
+                <li><a href="/account"> My Account </a></li>
             <% end %>
             <% if current_user === nil then %>
                 <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> My Account </a></li>
             <% end %>
 
             <% if current_user != nil then %>
-                <li><a href="http://allforfunds.com/account/information"> My Information </a></li>
+                <li><a href="/account/information"> My Information </a></li>
             <% end %>
             <% if current_user === nil then %>
                 <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> My Information </a></li>
             <% end %>
 
             <% if current_user != nil then %>
-                <li><a href="http://allforfunds.com/account/orders"> Order History </a></li>
+                <li><a href="/account/orders"> Order History </a></li>
             <% end %>
             <% if current_user === nil then %>
                 <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> Order History </a></li>
             <% end %>
-
-
+            
           </ul>
         </div>
         <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
