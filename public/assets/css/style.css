@@ -5547,12 +5547,16 @@ ul.sub-menu li {
   font-family: 'Raleway', sans-serif;
 }
 
-.footer-top input#mc-embedded-subscribe{
+.footer-top input#mc-embedded-subscribe {
   border: 2px solid #ffffff;
   background-color: #b99666;
   color: #ffffff;
 }
 
-.margin-top-10{
+.margin-top-10 {
   margin-top: 10px;
+}
+
+.bold {
+  font-weight: bold;
 }
