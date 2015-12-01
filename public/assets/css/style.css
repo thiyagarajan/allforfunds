@@ -3228,8 +3228,6 @@ h5.parallaxSubtitle {
   padding-bottom: 30px;
   position: relative;
   width: 100%;
-  border-bottom: 1px solid #141414;
-  border-top: 1px solid #141414;
 }
 
 .footer p {
@@ -5513,7 +5511,7 @@ ul.sub-menu li {
   height: auto !important;
 }
 
-.white-border{
+.white-border {
   position: absolute;
   height: 83%;
   width: 87%;
@@ -5521,21 +5519,42 @@ ul.sub-menu li {
   margin: 20px;
 }
 
-.white-border:hover{
+.white-border:hover {
   border: 5px solid transparent;
 }
 
-.featured-categories .col-md-7{
+.featured-categories .col-md-7 {
   width: 63%;
 }
 
-.featured-categories .col-md-5{
+.featured-categories .col-md-5 {
   width: 37%;
   padding-left: 0;
   padding-right: 30px;
 }
 
-.featured-categories .left img{
+.featured-categories .left img {
   max-height: 270px;
   max-height: 270px;
+}
+
+#footer .footer-top {
+  padding: 15px 0;
+  background-color: #b99666;
+  color: #ffffff;
+}
+
+.footer-top #mc_embed_signup_scroll input#mce-EMAIL {
+  border-color: #ffffff;
+  background-color: #ffffff;
+}
+
+.footer-top input#mc-embedded-subscribe{
+  border: 2px solid #ffffff;
+  background-color: #b99666;
+  color: #ffffff;
+}
+
+.margin-top-10{
+  margin-top: 10px;
 }
