@@ -3347,7 +3347,6 @@ h5.parallaxSubtitle {
 
 .social li a i {
   font-size: 16px;
-  margin: 0 0 0 6px;
   color: #000000 !important;
 }
 
@@ -4443,7 +4442,7 @@ tr.CartProduct td {
 }
 
 .social li {
-  margin: 0 6px 0 0;
+  margin: 0 0 0 15px;
 }
 
 .cartMenu.static-search-box a.dropdown-toggle {
@@ -5437,10 +5436,6 @@ div.thumbnail {
 
 a.phone {
   color: #ffffff;
-}
-
-.social li:last-child {
-  margin: 0 0 0 0;
 }
 
 input#mc-embedded-subscribe {
