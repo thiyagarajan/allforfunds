@@ -5560,3 +5560,7 @@ ul.sub-menu li {
 .bold {
   font-weight: bold;
 }
+
+.featured-categories .inner{
+  border: 3px solid #ffffff;
+}
