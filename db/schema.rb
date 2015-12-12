@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141130184302) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: true do |t|
     t.decimal "tax", precision: 20, scale: 10, default: 0.08
   end

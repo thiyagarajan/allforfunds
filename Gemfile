@@ -38,7 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'mysql2'
+#gem 'mysql2'
 gem 'rebay'
 gem 'devise'
 gem 'country_select', github: 'stefanpenner/country_select'
@@ -48,7 +48,8 @@ gem 'stripe'
 gem 'mail_form', '~> 1.5.0.rc'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'mandrill-api'
-gem 'unicorn'
+#gem 'unicorn'
 gem 'sprockets-rails'
-gem 'pg', group: :production
-gem 'rails_12factor', group: :production
+gem 'pg'
+#gem 'rails_12factor', group: :production
+gem 'tzinfo-data'
