@@ -5560,10 +5560,49 @@ ul.sub-menu li {
   font-weight: bold;
 }
 
-.featured-categories .inner{
+.featured-categories .inner {
   border: 4px solid #ffffff;
 }
 
-.btn-default{
+.btn-default {
   border-color: transparent !important;
+}
+
+/* For mobile : like samsung grand(480 * 800): */
+@media screen and (max-width: 480px) {
+  .featured-categories .col-md-7 {
+    width: 100%;
+  }
+
+  .featured-categories .col-md-5 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 30px;
+  }
+}
+
+/* For iphone: */
+@media screen and (max-width: 320px) {
+  .featured-categories .col-md-7 {
+    width: 100%;
+  }
+
+  .featured-categories .col-md-5 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 30px;
+  }
+}
+
+/* For ipad: */
+@media screen and (max-width: 768px) {
+  .featured-categories .col-md-7 {
+    width: 100%;
+  }
+
+  .featured-categories .col-md-5 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 30px;
+  }
 }
