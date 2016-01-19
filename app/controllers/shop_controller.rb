@@ -35,16 +35,16 @@ class ShopController < ApplicationController
     m = Mandrill::API.new 'WT6Y9B8FxGp4ptd7DxdZ4Q'
     begin
       message = {
-          :subject => params["subject"],
-          :from_name => params["firstname"] + params["lastname"],
-          :text => params["comment"],
-          :to => [
-              {
-                  :email => "info@allforfunds.com",
-                  :name => "Info"
-              }
-          ],
-          :from_email => params["email"]
+        :subject => params["subject"],
+        :from_name => params["firstname"] + params["lastname"],
+        :text => params["comment"],
+        :to => [
+          {
+            :email => "info@allforfunds.com",
+            :name => "Info"
+          }
+        ],
+        :from_email => params["email"]
       }
       m.messages.send message
     rescue
@@ -59,22 +59,22 @@ class ShopController < ApplicationController
     m = Mandrill::API.new 'WT6Y9B8FxGp4ptd7DxdZ4Q'
     begin
       message = {
-          :subject => "NEW SELLER",
-          :from_name => "Automated",
-          :text => "Name: #{params["firstname"] + params["lastname"]}
+        :subject => "NEW SELLER",
+        :from_name => "Automated",
+        :text => "Name: #{params["firstname"] + params["lastname"]}
 	   			Email: #{params["email"]}
 	   			Phone: #{params["phone"]} 
 	   			Address: #{params["address"]} 
 	   			City: #{params["city"]}
 	   			State: #{params["state"]} 
 	   			Zip: #{params["zip"]}",
-          :to => [
-              {
-                  :email => "info@allforfunds.com",
-                  :name => "Info"
-              }
-          ],
-          :from_email => "info@allforfunds.com"
+        :to => [
+          {
+            :email => "info@allforfunds.com",
+            :name => "Info"
+          }
+        ],
+        :from_email => "info@allforfunds.com"
       }
       m.messages.send message
     rescue
@@ -86,7 +86,6 @@ class ShopController < ApplicationController
   end
 
   def shop
-
     @results = nil
 
     items = []
@@ -149,7 +148,6 @@ class ShopController < ApplicationController
 
       if ebay_items.kind_of?(Hash) then
         #there is only one result so we are just gonna direct them to it.
-
         i = Item.where("eId = ?", ebay_items["itemId"]).first
         return redirect_to "/items/#{i.id}"
       end
