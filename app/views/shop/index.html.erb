@@ -47,9 +47,9 @@
   <!-- include pace script for automatic web page progress bar  -->
 
   <script>
-      paceOptions = {
-          elements: true
-      };
+    paceOptions = {
+      elements: true
+    };
   </script>
 
   <script src="/assets/js/pace.min.js"></script>
@@ -121,7 +121,7 @@
             </div>
           </div>
         </div>
-        <a href="index5.html#"><img class="img-responsive" src="/images/pages/index/slider/slide_aboutus.jpg" alt="img"></a>
+        <%= link_to image_tag('pages/index/slider/banner_3.jpg', alt: ''), '#' %>
       </div>
 
     </div>
@@ -433,12 +433,12 @@
 <script src="/assets/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script>
-    $(document).ready(function () {
-        if (jQuery.cookie('pop') == null) {
-            jQuery('#myModal').modal('show');
-            jQuery.cookie('pop', '7');
-        }
-    });
+  $(document).ready(function () {
+    if (jQuery.cookie('pop') == null) {
+      jQuery('#myModal').modal('show');
+      jQuery.cookie('pop', '7');
+    }
+  });
 </script>
 
 <%= render 'layouts/footer' %>
