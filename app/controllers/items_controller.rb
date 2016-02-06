@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     if params[:name] == nil then
       @item = Item.find(params[:id])
     else
-      @item = Item.where("title = ?", params[:name].gsub("%2E", ".").gsub("%29", ")").gsub("%28", "(").gsub("*", "/").gsub("+", " ").gsub("%2F", "+").gsub("%25", "%") { |match|}).first
+      @item = Item.where("title = ?", params[:name].gsub("%2E", ".").gsub("%29", ")").gsub("%28", "(").gsub("+", " ").gsub("%2F", "+").gsub("%25", "%").gsub("/", "+") { |match|}).first
       if @item == nil then
         flash.now[:alert] = title
         raise ActionController::RoutingError.new('Not Found')

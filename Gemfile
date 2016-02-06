@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
@@ -38,7 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-#gem 'mysql2'
+gem 'mysql2', '0.3.20'
 gem 'rebay'
 gem 'devise'
 gem 'country_select', github: 'stefanpenner/country_select'
@@ -50,6 +50,6 @@ gem 'simple_form', '~> 3.0.0.rc'
 gem 'mandrill-api'
 #gem 'unicorn'
 gem 'sprockets-rails'
-gem 'pg'
+#gem 'pg'
 #gem 'rails_12factor', group: :production
 gem 'tzinfo-data'
